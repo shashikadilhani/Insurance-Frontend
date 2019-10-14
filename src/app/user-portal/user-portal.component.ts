@@ -12,7 +12,8 @@ export class UserPortalComponent implements OnInit {
   menu = [
     { name: "Dashboard", key: "dashboard" },
     { name: "Available Brokers", key: "brokerlist" },
-    { name: "My Broker Requests", key: "broker-requests" }
+    { name: "My Broker Requests", key: "broker-requests" },
+    { name: "My Claims", key: "claims" }
   ];
   constructor(private route: ActivatedRoute) {
     route.queryParamMap.subscribe(params => {

@@ -18,6 +18,8 @@ import { AdminUsersComponent } from "./admin-users/admin-users.component";
 import { BrokersListComponent } from "./brokers-list/brokers-list.component";
 import { BrokerPendingRequestsComponent } from "./broker-pending-requests/broker-pending-requests.component";
 import { UserBrokersListComponent } from './user-brokers-list/user-brokers-list.component';
+import { UserClaimsListComponent } from './user-claims-list/user-claims-list.component';
+import { UserNewClaimComponent } from './user-new-claim/user-new-claim.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { UserBrokersListComponent } from './user-brokers-list/user-brokers-list.
     AdminUsersComponent,
     BrokersListComponent,
     BrokerPendingRequestsComponent,
-    UserBrokersListComponent
+    UserBrokersListComponent,
+    UserClaimsListComponent,
+    UserNewClaimComponent
   ],
   imports: [
     BrowserModule,
