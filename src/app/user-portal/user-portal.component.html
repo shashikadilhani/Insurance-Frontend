@@ -1,0 +1,36 @@
+<div class="container-fluid pulldown">
+  <div class="row">
+    <div class="col-2">
+      <div class="list-group">
+        <a
+          *ngFor="let menuitem of menu"
+          class="list-group-item list-group-item-action"
+          [class.active]="category === menuitem.key"
+          routerLink="/customer/portal"
+          [queryParams]="{ category: menuitem.key }"
+        >
+          <h6>{{ menuitem.name }}</h6>
+        </a>
+      </div>
+    </div>
+    <div class="col">
+      <div *ngIf="category === 'dashboard'" class="card">
+        <div class="card ">
+          <div class="card-header">
+            Dashboard
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="category === 'brokerlist'" class="card">
+        <app-user-brokers-list></app-user-brokers-list>
+      </div>
+      <div *ngIf="category === 'pending-requests'" class="card">
+        <app-broker-pending-requests></app-broker-pending-requests>
+      </div>
+    </div>
+  </div>
+</div>

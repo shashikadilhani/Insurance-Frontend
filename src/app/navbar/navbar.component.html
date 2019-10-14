@@ -1,0 +1,55 @@
+<nav
+  class="navbar navbar-expand-lg navbar-dark"
+  style="background-color: #3f51b5;"
+>
+  <a class="navbar-brand" routerLink="/"
+    >Insurance Management System <small></small
+  ></a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto"></ul>
+    <form class="form-inline my-sm-0 kk link ">
+      <a *ngIf="auth.isLoggedIn()" ngbDropdown class="nav-item dropdown">
+        <a
+          ngbDropdownToggle
+          class="nav-link dropdown-toggle"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          {{ auth.currentUser.fullname }}
+        </a>
+        <div
+          ngbDropdownMenu
+          class="dropdown-menu"
+          aria-labelledby="navbarDropdown"
+        >
+          <a class="dropdown-item" (click)="navigateToPortal()">My Portal</a>
+          <a class="dropdown-item" (click)="logout()">Logout</a>
+        </div>
+      </a>
+      <a
+        class="btn btn-success mr-2"
+        *ngIf="!auth.isLoggedIn()"
+        routerLink="/register"
+        >Sign up</a
+      >
+      <a class="btn btn-warning" *ngIf="!auth.isLoggedIn()" routerLink="/login"
+        >Login</a
+      >
+    </form>
+  </div>
+</nav>

@@ -1,0 +1,9 @@
+div.pulldown {
+  padding-top: 50px;
+  max-width: 100%;
+}
+div.c {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}

@@ -1,0 +1,22 @@
+.link {
+  color: #ffffff;
+}
+
+.large {
+  width: 40%;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+.n {
+  margin-right: 40px;
+}

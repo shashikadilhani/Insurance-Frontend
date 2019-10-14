@@ -1,0 +1,127 @@
+<div class="container pulldown">
+  <div class="card c w-50 ">
+    <div class="card-header">
+      Registration Form
+    </div>
+    <div class="card-body">
+      <div class="form-group"></div>
+      <form #fm="ngForm">
+        <div class="row">
+          <div class="col-6 form-group">
+            <label> First Name</label>
+            <input
+              id="fname"
+              name="fname"
+              [(ngModel)]="fname"
+              type="text"
+              placeholder="Enter First Name Here.."
+              class="form-control"
+            />
+          </div>
+          <div class="col-6 form-group">
+            <label> Last Name</label>
+            <input
+              id="lname"
+              [(ngModel)]="lname"
+              name="last_name"
+              type="text"
+              placeholder="Enter Last Name Here.."
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Address</label>
+          <textarea
+            id="address"
+            [(ngModel)]="address"
+            name="address"
+            placeholder="Enter Address Here.."
+            class="form-control"
+          ></textarea>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-6">
+            <label>Password</label>
+            <input
+              id="pwd"
+              [(ngModel)]="pwd"
+              name="pwd"
+              type="password"
+              placeholder="Enter Password Address Here.."
+              class="form-control"
+            />
+          </div>
+          <div class="form-group col-6">
+            <label>Phone Number</label>
+            <input
+              id="phnnum"
+              [(ngModel)]="phnnum"
+              name="phnnum"
+              type="text"
+              placeholder="Enter Phone Number Here.."
+              class="form-control"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-6">
+            <label>Nic No</label>
+            <input
+              id="nicno"
+              [(ngModel)]="nicno"
+              name="nicno"
+              type="text"
+              placeholder="Enter Nic no Here.."
+              class="form-control"
+            />
+          </div>
+          <div class="form-group col-6"></div>
+        </div>
+        <div class="row">
+          <div class="form-group col-6">
+            <label>Email Address</label>
+            <input
+              id="email"
+              [(ngModel)]="email"
+              name="email"
+              type="text"
+              placeholder="Enter Email Address Here.."
+              class="form-control"
+            />
+          </div>
+          <div class="form-group col-6">
+            <label for="inputEmail4">User Type</label>
+            <select
+              [(ngModel)]="role"
+              type="text"
+              class="form-control"
+              id="role"
+              name="role"
+              placeholder="Select a Role"
+            >
+              <option>
+                Admin
+              </option>
+
+              <option>
+                Broker
+              </option>
+              <option>
+                Customer
+              </option>
+            </select>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

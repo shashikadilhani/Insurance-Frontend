@@ -1,0 +1,37 @@
+<div class="card ">
+  <div class="card-header">
+    Pending Broker Requests List
+  </div>
+  <div class="card-body">
+    <div class="text-right">
+      <table class="table">
+        <thead class="">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Full name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phn no</th>
+            <th scope="col">City</th>
+            <th scope="col">E-mail</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of listItems">
+            <th scope="row">{{ i.user_id }}</th>
+            <td>{{ i.fullname }}</td>
+            <td>{{ i.address }}</td>
+            <td>{{ i.phone_num }}</td>
+            <td>{{ i.city }}</td>
+            <td>{{ i.email }}</td>
+            <td>
+              <button class="btn btn-success" (click)="approve(i.user_id)">
+                Approve
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
