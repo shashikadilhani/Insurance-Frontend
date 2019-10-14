@@ -1,0 +1,51 @@
+<div class="card ">
+    <div class="card-header">
+      My Vehicles
+      <button class="btn btn-success float-right" (click)="addVehicle()">
+        Add New
+      </button>
+    </div>
+    <div class="card-body">
+      <div class="text-right">
+        <table class="table">
+          <thead class="">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Model</th>
+              <th scope="col">Type</th>
+              <th scope="col">Manuf. Year</th>
+              <th scope="col">Market Value</th>
+              <th scope="col">V Usage</th>
+              <th scope="col">Fuel Type</th>
+              <th scope="col">Meta</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of listItems">
+              <th scope="row">{{ i.number }}</th>
+              <td>{{ i.Model }}</td>
+              <td>{{ i.type }}</td>
+              <td>{{ i.Mauf_Year }}</td>
+              <td>{{ i.Market_Value }}</td>
+              <td>{{ i.v_usage }}</td>
+              <td>{{ i.fugi_type }}</td>
+              <td>{{ i.meta }}</td>
+              <td>
+                <button class="btn btn-danger" (click)="deleteVehicle(i.vehicle_ID)">
+                  Delete
+                </button>
+              </td>
+              <td>
+                <button class="btn btn-info" (click)="updateVehicle(i.vehicle_ID)">
+                  Edit
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

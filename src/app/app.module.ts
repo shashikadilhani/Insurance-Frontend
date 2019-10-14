@@ -20,6 +20,10 @@ import { BrokerPendingRequestsComponent } from "./broker-pending-requests/broker
 import { UserBrokersListComponent } from './user-brokers-list/user-brokers-list.component';
 import { UserClaimsListComponent } from './user-claims-list/user-claims-list.component';
 import { UserNewClaimComponent } from './user-new-claim/user-new-claim.component';
+import { FileSelectDirective } from 'ng2-file-upload';
+import { UserVehiclesComponent } from './user-vehicles/user-vehicles.component';
+import { NewVehicleComponent } from './user-vehicles/pop-up/new-vehicle/new-vehicle.component';
+import { UpdateVehicleComponent } from './user-vehicles/pop-up/update-vehicle/update-vehicle.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { UserNewClaimComponent } from './user-new-claim/user-new-claim.component
     BrokerPendingRequestsComponent,
     UserBrokersListComponent,
     UserClaimsListComponent,
-    UserNewClaimComponent
+    UserNewClaimComponent,
+    FileSelectDirective,
+    UserVehiclesComponent,
+    NewVehicleComponent,
+    UpdateVehicleComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +56,10 @@ import { UserNewClaimComponent } from './user-new-claim/user-new-claim.component
     NgbModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    NewVehicleComponent,
+    UpdateVehicleComponent
+  ]
 })
 export class AppModule {}
