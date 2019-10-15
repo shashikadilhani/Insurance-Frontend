@@ -21,6 +21,12 @@ export class DataService {
     return this.http.get(`http://localhost:3001/api/${endpoint}/${subroute}`);
   }
 
+  getOne(endpoint: string, subroute: string, id) {
+    return this.http.get(
+      `http://localhost:3001/api/${endpoint}/${subroute}?id=${id}`
+    );
+  }
+
   getBy(endpoint: string, subroute: string, data: any) {
     return this.http.post(
       `http://localhost:3001/api/${endpoint}/${subroute}`,

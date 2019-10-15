@@ -1,0 +1,17 @@
+<div class="modal-header">
+    <h4 class="modal-title">Request Quotation</h4>
+</div>
+<div class="modal-body">
+    <select class="form-control">
+        <option>Vehicles</option>
+        <option>Properties</option>
+    </select>
+    <div class="form-group" *ngIf="">
+        <label>Number</label>
+        <input type="text" class="form-control" id="number" placeholder="Enter Vehicle Number">
+    </div>
+    <button class="btn btn-primary" (click)="requestQuotation()">Request</button>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { AuthService } from '../auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 import { NewVehicleComponent } from './pop-up/new-vehicle/new-vehicle.component';
+import { UpdateVehicleComponent } from './pop-up/update-vehicle/update-vehicle.component';
 
 @Component({
   selector: 'app-user-vehicles',
@@ -16,7 +18,8 @@ export class UserVehiclesComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private authService: AuthService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private toastService: ToastrService
   ) { }
 
   ngOnInit() {
@@ -32,7 +35,14 @@ export class UserVehiclesComponent implements OnInit {
 
   addVehicle() {
     const modalRef = this.modalService.open(NewVehicleComponent);
-    modalRef.componentInstance.name = 'World';
+    modalRef.result.then(data => {
+      if (data === 'success') {
+        this.loadData();
+        this.toastService.error("Vehicle added successfully.");
+      } else if (data === 'error') {
+        this.toastService.error("Unable to add the new vehicle.");
+      }
+    });
   }
 
   deleteVehicle(vehicleId: any) {
@@ -43,5 +53,16 @@ export class UserVehiclesComponent implements OnInit {
     });
   }
 
-  updateVehicle(vehicle_ID) { }
+  updateVehicle(vehicle_ID) {
+    const modalRef = this.modalService.open(UpdateVehicleComponent);
+    modalRef.componentInstance.vehicle_ID = vehicle_ID;
+    modalRef.result.then(data => {
+      if (data === 'success') {
+        this.loadData();
+        this.toastService.error("Vehicle update successfully.");
+      } else if (data === 'error') {
+        this.toastService.error("Unable to update the new vehicle.");
+      }
+    });
+  }
 }

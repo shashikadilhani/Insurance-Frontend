@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "../data.service";
 import { AuthService } from "../auth.service";
+import { RequestQuotationComponent } from './pop-up/request-quotation/request-quotation.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: "app-user-brokers-list",
@@ -12,11 +15,15 @@ export class UserBrokersListComponent implements OnInit {
   endpoint = "brokers";
   city;
 
-  constructor(private data: DataService, private auth: AuthService) {}
+  constructor(
+    private data: DataService,
+    private auth: AuthService,
+    private modalService: NgbModal,
+    private toastService: ToastrService
+  ) { }
 
   ngOnInit() {
     this.city = this.auth.currentUser.city;
-    console.log(this.auth.currentUser);
     this.loadData();
   }
 
@@ -29,8 +36,13 @@ export class UserBrokersListComponent implements OnInit {
   }
 
   request(id: string) {
-    this.data.delete(this.endpoint, id).subscribe(res => {
-      this.loadData();
+    const modalRef = this.modalService.open(RequestQuotationComponent);
+    modalRef.result.then(data => {
+      if (data === 'success') {
+        this.toastService.error("Request sent successfully.");
+      } else if (data === 'error') {
+        this.toastService.error("Request failed.");
+      }
     });
   }
 }

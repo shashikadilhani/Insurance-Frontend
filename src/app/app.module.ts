@@ -24,6 +24,9 @@ import { FileSelectDirective } from 'ng2-file-upload';
 import { UserVehiclesComponent } from './user-vehicles/user-vehicles.component';
 import { NewVehicleComponent } from './user-vehicles/pop-up/new-vehicle/new-vehicle.component';
 import { UpdateVehicleComponent } from './user-vehicles/pop-up/update-vehicle/update-vehicle.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations/';
+import { RequestQuotationComponent } from './user-brokers-list/pop-up/request-quotation/request-quotation.component';
 
 @NgModule({
   declarations: [
@@ -46,20 +49,26 @@ import { UpdateVehicleComponent } from './user-vehicles/pop-up/update-vehicle/up
     FileSelectDirective,
     UserVehiclesComponent,
     NewVehicleComponent,
-    UpdateVehicleComponent
+    UpdateVehicleComponent,
+    RequestQuotationComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
     NewVehicleComponent,
-    UpdateVehicleComponent
+    UpdateVehicleComponent,
+    RequestQuotationComponent
   ]
 })
 export class AppModule {}
