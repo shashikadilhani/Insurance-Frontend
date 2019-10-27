@@ -37,9 +37,10 @@ export class UserBrokersListComponent implements OnInit {
 
   request(id: string) {
     const modalRef = this.modalService.open(RequestQuotationComponent);
+    modalRef.componentInstance.brokerId = id;
     modalRef.result.then(data => {
       if (data === 'success') {
-        this.toastService.error("Request sent successfully.");
+        this.toastService.success("Request sent successfully.");
       } else if (data === 'error') {
         this.toastService.error("Request failed.");
       }

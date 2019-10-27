@@ -1,0 +1,42 @@
+<div class="card ">
+    <div class="card-header">
+      Customer Quotation Requests
+    </div>
+    <div class="card-body">
+      <div class="text-right">
+        <table class="table">
+          <thead class="">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Customer Name</th>
+              <th scope="col">Address</th>
+              <th scope="col">Phn no</th>
+              <th scope="col">City</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">NIC</th>
+              <th scope="col">Type</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of listItems">
+              <th scope="row">{{ i.Request_ID }}</th>
+              <td>{{ i.fullname }}</td>
+              <td>{{ i.address }}</td>
+              <td>{{ i.phone_num }}</td>
+              <td>{{ i.city }}</td>
+              <td>{{ i.email }}</td>
+              <td>{{ i.nic }}</td>
+              <td>{{ i.vehicle_id!=null?'Vehicle':'Building' }}</td>
+              <td>
+                <button class="btn btn-danger" (click)="viewDetails(i.user_id)">
+                  View Details
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

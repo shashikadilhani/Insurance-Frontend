@@ -27,6 +27,8 @@ import { UpdateVehicleComponent } from './user-vehicles/pop-up/update-vehicle/up
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations/';
 import { RequestQuotationComponent } from './user-brokers-list/pop-up/request-quotation/request-quotation.component';
+import { BrokerQuotationReponsesComponent } from './broker-quotation-reponses/broker-quotation-reponses.component';
+import { CustomerQuotationRequestsComponent } from './customer-quotation-requests/customer-quotation-requests.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { RequestQuotationComponent } from './user-brokers-list/pop-up/request-qu
     UserVehiclesComponent,
     NewVehicleComponent,
     UpdateVehicleComponent,
-    RequestQuotationComponent
+    RequestQuotationComponent,
+    BrokerQuotationReponsesComponent,
+    CustomerQuotationRequestsComponent
   ],
   imports: [
     BrowserModule,

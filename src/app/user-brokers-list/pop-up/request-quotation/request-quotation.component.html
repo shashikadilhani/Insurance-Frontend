@@ -6,11 +6,17 @@
     <select class="form-control" aria-placeholder="Select" #t (change)="selectionChanged(t.value)">
         <option *ngFor="let type of types" [value]="type.route">{{type.name}}</option>
     </select>
-    <div class="form-group">
+    <div class="form-group" *ngIf="selection=='vehicle'">
         <label>Select the {{selection}}</label>
-        <!-- <select class="form-control" aria-placeholder="Select" #t (change)="selectionChanged(t.value)">
-            <option *ngFor="let type of types" [value]="type">{{type}}</option>
-        </select> -->
+        <select class="form-control" aria-placeholder="Select" #p (change)="typeSelected(p.value)">
+            <option *ngFor="let types of typeDatas" [value]="types.vehicle_ID">{{types.vehicle_ID}}</option>
+        </select>
+    </div>
+    <div class="form-group" *ngIf="selection=='property'">
+        <label>Select the {{selection}}</label>
+        <select class="form-control" aria-placeholder="Select" #p (change)="typeSelected(p.value)">
+            <option *ngFor="let types of typeDatas" [value]="types.id">{{types.id}}</option>
+        </select>
     </div>
     &nbsp;
     <button class="btn btn-primary" (click)="requestQuotation()">Request</button>
