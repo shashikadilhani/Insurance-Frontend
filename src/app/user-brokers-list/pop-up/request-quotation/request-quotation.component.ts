@@ -16,9 +16,31 @@ export class RequestQuotationComponent implements OnInit {
     private dataService: DataService
   ) { }
 
+  selection = 'vehicle';
+  selectionList = [];
+
+  types = [
+    { name: 'Vehicle', route: 'vehicle' },
+    { name: 'Building', route: 'property'}
+  ];
+
   ngOnInit() {
+    this.loadData();
   }
 
   requestQuotation() {}
+
+  selectionChanged(value) {
+    this.selection = value;
+    this.loadData();
+  }
+
+  loadData() {
+    const id = this.authService.currentUser.id;
+    console.log(this.selection);
+    this.dataService.get(`customers/${this.selection}`, `get?id=${id}`).subscribe(data => {
+      console.log(data);
+    });
+  }
 
 }
