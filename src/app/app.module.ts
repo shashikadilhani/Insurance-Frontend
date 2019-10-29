@@ -29,6 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations/';
 import { RequestQuotationComponent } from './user-brokers-list/pop-up/request-quotation/request-quotation.component';
 import { BrokerQuotationReponsesComponent } from './broker-quotation-reponses/broker-quotation-reponses.component';
 import { CustomerQuotationRequestsComponent } from './customer-quotation-requests/customer-quotation-requests.component';
+import { PopUpViewRequestComponent } from './customer-quotation-requests/pop-up-view-request/pop-up-view-request.component';
+import { PopUpCalculatedQuotationComponent } from './customer-quotation-requests/pop-up-calculated-quotation/pop-up-calculated-quotation.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { CustomerQuotationRequestsComponent } from './customer-quotation-request
     UpdateVehicleComponent,
     RequestQuotationComponent,
     BrokerQuotationReponsesComponent,
-    CustomerQuotationRequestsComponent
+    CustomerQuotationRequestsComponent,
+    PopUpViewRequestComponent,
+    PopUpCalculatedQuotationComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +76,9 @@ import { CustomerQuotationRequestsComponent } from './customer-quotation-request
   entryComponents: [
     NewVehicleComponent,
     UpdateVehicleComponent,
-    RequestQuotationComponent
+    RequestQuotationComponent,
+    PopUpViewRequestComponent,
+    PopUpCalculatedQuotationComponent
   ]
 })
 export class AppModule {}
