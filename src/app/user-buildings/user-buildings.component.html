@@ -1,0 +1,50 @@
+<div class="card ">
+    <div class="card-header">
+        My Buildings
+        <button class="btn btn-success float-right" (click)="addBuilding()">
+            Add New
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="text-right">
+            <table class="table">
+                <thead class="">
+                    <tr>
+                        <th scope="row">ID</th>
+                        <th scope="col">Estimate Value</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Type</th>
+                        <!-- <th scope="col">Market Value</th>
+                        <th scope="col">V Usage</th>
+                        <th scope="col">Fuel Type</th>
+                        <th scope="col">Meta</th> -->
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of listItems">
+                        <th scope="row">{{ i.id }}</th>
+                        <td>{{ i.estimate_Value }}</td>
+                        <td>{{ i.address }}</td>
+                        <td>{{ i.type }}</td>
+                        <!-- <td>{{ i.user_id }}</td> -->
+                        <!-- <td>{{ i.v_usage }}</td>
+                        <td>{{ i.fugi_type }}</td>
+                        <td>{{ i.meta }}</td> -->
+                        <td>
+                            <button class="btn btn-danger" (click)="deleteBuilding(i.id)">
+                                Delete
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-info" (click)="updateBuilding(i.id)">
+                                Edit
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

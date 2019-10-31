@@ -34,7 +34,7 @@ export class DataService {
     );
   }
 
-  delete(endpoint: string, id: string) {
+  delete(endpoint: string, id: any) {
     return this.http.get(
       `http://localhost:3001/api/${endpoint}/delete?id=${id}`
     );

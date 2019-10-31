@@ -31,6 +31,14 @@ import { BrokerQuotationReponsesComponent } from './broker-quotation-reponses/br
 import { CustomerQuotationRequestsComponent } from './customer-quotation-requests/customer-quotation-requests.component';
 import { PopUpViewRequestComponent } from './customer-quotation-requests/pop-up-view-request/pop-up-view-request.component';
 import { PopUpCalculatedQuotationComponent } from './customer-quotation-requests/pop-up-calculated-quotation/pop-up-calculated-quotation.component';
+import { UserBuildingsComponent } from './user-buildings/user-buildings.component';
+import { NewBuildingComponent } from './user-buildings/pop-up/new-building/new-building.component';
+import { UpdateBuildingComponent } from './user-buildings/pop-up/update-building/update-building.component';
+import { UserBuildingClaimsListComponent } from './user-building-claims-list/user-building-claims-list.component';
+import { PopUpNewClaimComponent } from './user-claims-list/pop-up-new-claim/pop-up-new-claim.component';
+import { PopUpViewClaimComponent } from './user-claims-list/pop-up-view-claim/pop-up-view-claim.component';
+import { PopUpViewBuildingClaimComponent } from './user-building-claims-list/pop-up-view-building-claim/pop-up-view-building-claim.component';
+import { PopUpNewBuildingClaimComponent } from './user-building-claims-list/pop-up-new-building-claim/pop-up-new-building-claim.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +66,15 @@ import { PopUpCalculatedQuotationComponent } from './customer-quotation-requests
     BrokerQuotationReponsesComponent,
     CustomerQuotationRequestsComponent,
     PopUpViewRequestComponent,
-    PopUpCalculatedQuotationComponent
+    PopUpCalculatedQuotationComponent,
+    UserBuildingsComponent,
+    NewBuildingComponent,
+    UpdateBuildingComponent,
+    UserBuildingClaimsListComponent,
+    PopUpNewClaimComponent,
+    PopUpViewClaimComponent,
+    PopUpViewBuildingClaimComponent,
+    PopUpNewBuildingClaimComponent
   ],
   imports: [
     BrowserModule,
@@ -76,9 +92,15 @@ import { PopUpCalculatedQuotationComponent } from './customer-quotation-requests
   entryComponents: [
     NewVehicleComponent,
     UpdateVehicleComponent,
+    NewBuildingComponent,
+    UpdateBuildingComponent,
     RequestQuotationComponent,
     PopUpViewRequestComponent,
-    PopUpCalculatedQuotationComponent
+    PopUpCalculatedQuotationComponent,
+    PopUpNewClaimComponent,
+    PopUpViewClaimComponent,
+    PopUpViewBuildingClaimComponent,
+    PopUpNewBuildingClaimComponent
   ]
 })
 export class AppModule {}

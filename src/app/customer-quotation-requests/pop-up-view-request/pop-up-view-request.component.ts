@@ -13,6 +13,7 @@ export class PopUpViewRequestComponent implements OnInit {
 
   @Input() requestData;
   propertyData;
+  type: number;
 
   constructor(
     private modalService: NgbActiveModal,
@@ -24,14 +25,15 @@ export class PopUpViewRequestComponent implements OnInit {
   ngOnInit() {
     const buildingId = this.requestData.building_id;
     const vehicleId = this.requestData.vehicle_id;
-    console.log('before error')
     if (buildingId && !vehicleId) {
       this.dataService.getOne('brokers', 'buildingQuotation', buildingId).subscribe(result => {
+        this.type = 0;
         this.propertyData = result[0];
         console.log(result)
       });
     } else if (!buildingId && vehicleId) {
       this.dataService.getOne('brokers', 'vehicleQuotation', vehicleId).subscribe(result => {
+        this.type = 1;
         this.propertyData = result[0];
         console.log(result)
       });

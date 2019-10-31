@@ -26,7 +26,7 @@ export class RequestQuotationComponent implements OnInit {
 
   types = [
     { name: 'Vehicle', route: 'vehicle' },
-    { name: 'Building', route: 'property' }
+    { name: 'Building', route: 'building' }
   ];
 
   ngOnInit() {
@@ -64,7 +64,7 @@ export class RequestQuotationComponent implements OnInit {
         customer_id: this.authService.currentUser.id,
         broker_id: this.brokerId
       };
-    } else if (this.selection === 'property') {
+    } else if (this.selection === 'building') {
       tempObj = {
         building_id: this.typeId,
         customer_id: this.authService.currentUser.id,

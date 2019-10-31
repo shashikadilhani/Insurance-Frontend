@@ -1,0 +1,55 @@
+<div class="modal-header">
+        <h4 class="modal-title">Claim Details</h4>
+    </div>
+    <div class="modal-body container" *ngIf="propertyData">
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>Claim Id</strong></label>
+                <label>&nbsp;{{requestData.id}}</label>
+            </div>
+            <div class="col-sm">
+                <label><strong></strong></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>Building Id</strong></label>
+                <label>&nbsp;{{requestData.building_id}}</label>
+            </div>
+            <div class="col-sm">
+                <label><strong>Estimate Value</strong></label>
+                <label>&nbsp;{{propertyData.estimate_Value}}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>Date</strong></label>
+                <label>&nbsp;{{requestData.date}}</label>
+            </div>
+            <div class="col-sm">
+                <label><strong>Address</strong></label>
+                <label>&nbsp;{{propertyData.address}}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+    
+            <div class="col-sm">
+                <label><strong>Time</strong></label>
+                <label>&nbsp;{{requestData.time}}</label>
+            </div>
+            <div class="col-sm">
+                <label><strong>Type</strong></label>
+                <label>&nbsp;{{propertyData.type}}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>Casualties</strong></label>
+                <label>&nbsp;{{requestData.casualties}}</label>
+            </div>
+        </div>
+        &nbsp;
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+    </div>

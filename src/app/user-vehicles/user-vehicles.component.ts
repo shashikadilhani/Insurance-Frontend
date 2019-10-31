@@ -38,7 +38,7 @@ export class UserVehiclesComponent implements OnInit {
     modalRef.result.then(data => {
       if (data === 'success') {
         this.loadData();
-        this.toastService.error("Vehicle added successfully.");
+        this.toastService.success("Vehicle added successfully.");
       } else if (data === 'error') {
         this.toastService.error("Unable to add the new vehicle.");
       }
@@ -59,7 +59,7 @@ export class UserVehiclesComponent implements OnInit {
     modalRef.result.then(data => {
       if (data === 'success') {
         this.loadData();
-        this.toastService.error("Vehicle update successfully.");
+        this.toastService.success("Vehicle update successfully.");
       } else if (data === 'error') {
         this.toastService.error("Unable to update the new vehicle.");
       }

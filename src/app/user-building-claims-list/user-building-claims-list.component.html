@@ -1,0 +1,44 @@
+<div class="card ">
+    <div class="card-header">
+        My Building Claims
+        <button class="btn btn-success float-right" (click)="newClaim()">
+            Add New
+        </button>
+    </div>
+    <div class="card-body">
+        <div>
+            <table class="table">
+                <thead class="">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Building Id</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Casualties</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of claimItems">
+                        <th scope="row">{{ i.id }}</th>
+                        <td>{{ i.building_id }}</td>
+                        <td>{{ i.date }}</td>
+                        <td>{{ i.time }}</td>
+                        <td>{{ i.casualties }}</td>
+                        <td>
+                            <button class="btn btn-warning" (click)="viewClaim(i)">
+                                View Claim
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning" (click)="deleteClaim(i.id)">
+                                Delete Claim
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

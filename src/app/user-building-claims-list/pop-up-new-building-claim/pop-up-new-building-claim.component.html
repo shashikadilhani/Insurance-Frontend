@@ -1,0 +1,51 @@
+<div class="modal-header">
+    <h4 class="modal-title">Add New Building Claim</h4>
+</div>
+<div class="modal-body">
+    <form [formGroup]="buildingForm" (ngSubmit)="onSubmit(buildingForm.value)">
+        <div class="form-group">
+            <label>Select Building by Id</label>
+            <select class="form-control" aria-placeholder="Select">
+                <option *ngFor="let building of buildings" [value]="building.id">{{building.id}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Date</label>
+            <input type="text" class="form-control" formControlName="date" placeholder="Enter Date">
+        </div>
+        <div class="form-group">
+            <label>Time</label>
+            <input type="text" class="form-control" formControlName="time" placeholder="Enter Time">
+        </div>
+        <div class="form-group">
+            <label>Casualties</label>
+            <input type="text" class="form-control" formControlName="casualties"
+                placeholder="Enter amount of Casualties">
+        </div>
+
+        <div class="form-group">
+            Photo #1
+            <input type="file" class="form-control" ng2FileSelect
+            id="file1" (change)="handleFileInput1($event.target.files)" />
+            <br />
+        </div>
+        <div class="form-group">
+            Photo #2
+            <input type="file" class="form-control" ng2FileSelect
+            id="file2" (change)="handleFileInput2($event.target.files)" />
+            <br />
+        </div>
+        <div class="form-group">
+            Photo #3
+            <input type="file" class="form-control" ng2FileSelect
+            id="file3" (change)="handleFileInput3($event.target.files)" />
+            <br />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>
