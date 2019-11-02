@@ -15,7 +15,7 @@
                   <th scope="col">E-mail</th>
                   <th scope="col">NIC</th>
                   <th scope="col">Type</th>
-                  <th scope="col">Customer Accpet Status</th>
+                  <th scope="col">Customer Accept Status</th>
                   <th scope="col">Policy Status</th>
                   <th scope="col"></th>
                 </tr>
@@ -30,7 +30,7 @@
                   <td>{{ i.email }}</td>
                   <td>{{ i.nic }}</td>
                   <td>{{ i.vehicle_id!=null?'Vehicle':'Building' }}</td>
-                  <td>{{ i.customer_acceptance=='0'?'Pending':i.is_Accepted=='2'?'Rejected':'Invalid' }}</td>
+                  <td>{{ i.customer_acceptance=='0'?'Pending':i.customer_acceptance=='2'?'Rejected':'Accepted' }}</td>
                   <td>{{ i.policy_status=='0'?'Pending':i.policy_status=='1'?'Sent':i.policy_status=='4'?'Rejected':'Invalid' }}</td>
                   <td>
                     <button class="btn btn-danger" (click)="viewDetails(i)">

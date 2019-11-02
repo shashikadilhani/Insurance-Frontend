@@ -30,7 +30,6 @@ import { RequestQuotationComponent } from './user-brokers-list/pop-up/request-qu
 import { BrokerQuotationReponsesComponent } from './broker-quotation-reponses/broker-quotation-reponses.component';
 import { CustomerQuotationRequestsComponent } from './customer-quotation-requests/customer-quotation-requests.component';
 import { PopUpViewRequestComponent } from './customer-quotation-requests/pop-up-view-request/pop-up-view-request.component';
-import { PopUpCalculatedQuotationComponent } from './customer-quotation-requests/pop-up-calculated-quotation/pop-up-calculated-quotation.component';
 import { UserBuildingsComponent } from './user-buildings/user-buildings.component';
 import { NewBuildingComponent } from './user-buildings/pop-up/new-building/new-building.component';
 import { UpdateBuildingComponent } from './user-buildings/pop-up/update-building/update-building.component';
@@ -46,6 +45,10 @@ import { PopUpVehicleClaimsComponent } from './customer-vehicle-claims/pop-up-ve
 import { BrokerQuotationRequestHistoryComponent } from './broker-quotation-request-history/broker-quotation-request-history.component';
 import { PopUpViewRequestDetailComponent } from './broker-quotation-request-history/pop-up-view-request-detail/pop-up-view-request-detail.component';
 import { CustomerHistoryComponent } from './customer-history/customer-history.component';
+import { BrokerPoliciesComponent } from './broker-policies/broker-policies.component';
+import { BrokerQoutationsComponent } from './broker-qoutations/broker-qoutations.component';
+import { PopUpDownloadQuotationComponent } from './broker-quotation-reponses/pop-up-download-quotation/pop-up-download-quotation.component';
+import { PopUpAcceptQuotationComponent } from './broker-quotation-reponses/pop-up-accept-quotation/pop-up-accept-quotation.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +76,6 @@ import { CustomerHistoryComponent } from './customer-history/customer-history.co
     BrokerQuotationReponsesComponent,
     CustomerQuotationRequestsComponent,
     PopUpViewRequestComponent,
-    PopUpCalculatedQuotationComponent,
     UserBuildingsComponent,
     NewBuildingComponent,
     UpdateBuildingComponent,
@@ -88,7 +90,11 @@ import { CustomerHistoryComponent } from './customer-history/customer-history.co
     PopUpVehicleClaimsComponent,
     BrokerQuotationRequestHistoryComponent,
     PopUpViewRequestDetailComponent,
-    CustomerHistoryComponent
+    CustomerHistoryComponent,
+    BrokerPoliciesComponent,
+    BrokerQoutationsComponent,
+    PopUpDownloadQuotationComponent,
+    PopUpAcceptQuotationComponent
   ],
   imports: [
     BrowserModule,
@@ -110,14 +116,15 @@ import { CustomerHistoryComponent } from './customer-history/customer-history.co
     UpdateBuildingComponent,
     RequestQuotationComponent,
     PopUpViewRequestComponent,
-    PopUpCalculatedQuotationComponent,
     PopUpNewClaimComponent,
     PopUpViewClaimComponent,
     PopUpViewBuildingClaimComponent,
     PopUpNewBuildingClaimComponent,
     PopUpBuildingClaimsComponent,
     PopUpVehicleClaimsComponent,
-    PopUpViewRequestDetailComponent
+    PopUpViewRequestDetailComponent,
+    PopUpDownloadQuotationComponent,
+    PopUpAcceptQuotationComponent
   ]
 })
 export class AppModule {}

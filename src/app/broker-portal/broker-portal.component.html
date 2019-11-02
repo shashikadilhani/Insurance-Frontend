@@ -39,6 +39,12 @@
       <div *ngIf="category === 'vehicle-claims'" class="card">
         <app-customer-vehicle-claims></app-customer-vehicle-claims>
       </div>
+      <div *ngIf="category === 'policies'" class="card">
+          <app-broker-policies></app-broker-policies>
+        </div>
+        <div *ngIf="category === 'quotations'" class="card">
+            <app-broker-qoutations></app-broker-qoutations>
+          </div>
     </div>
   </div>
 </div>

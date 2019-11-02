@@ -9,10 +9,11 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Broker Id</th>
-                        <th scope="col">Propety Type</th>
+                        <th scope="col">Property Type</th>
                         <th scope="col">Property Id</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Quotation</th>
                         <th scope="col">Policy</th>
+                        <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -20,25 +21,41 @@
                     <tr *ngFor="let i of listItems">
                         <th scope="row">{{ i.Request_ID }}</th>
                         <td>{{ i.broker_id }}</td>
-                        <td>{{ i.vehicle_id==0?'Vehicle':'Building' }}</td>
+                        <td>{{ i.vehicle_id?'Vehicle':'Building' }}</td>
                         <td>{{ i.vehicle_id }}{{ i.building_id }}</td>
                         <td>
-                            {{ i.is_accepted=='0'?'Pending':i.is_Accepted=='2'?'Rejected':'' }}
-                            <button class="btn btn-info" *ngIf="i.is_Accepted=='1'"
-                                (click)="downloadQuotations(i.vehicle_ID)">
+                            {{ i.is_Accepted==0?'Pending':i.is_Accepted==2?'Rejected':i.customer_acceptance==1?'Accepted':'' }}
+                            <button class="btn btn-info" *ngIf="i.is_Accepted=='1' && i.customer_acceptance=='0'"
+                                (click)="acceptQuotation(i.Request_ID)">
+                                Accept
+                            </button>
+                            &nbsp;
+                            <button class="btn btn-danger" *ngIf="i.is_Accepted=='1' && i.customer_acceptance=='0'"
+                                (click)="rejectQuotation(i.Request_ID)">
+                                Reject
+                            </button>
+                        </td>
+                        <td>
+                            {{ i.policy_status==0?'Pending':i.policy_status==2?'Rejected':i.policy_status==4?'Rejected':'' }}
+                            <button class="btn btn-info" *ngIf="i.policy_status==1"
+                                (click)="acceptPolicy(i.Request_ID)">
+                                Accept
+                            </button>
+                            &nbsp;
+                            <button class="btn btn-danger" *ngIf="i.policy_status==1"
+                                (click)="rejectPolicy(i.Request_ID)">
+                                Reject
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-info" *ngIf="i.is_Accepted==1" (click)="downloadQuotations()">
                                 Download Quotation
                             </button>
                         </td>
                         <td>
-                            {{ i.policy_status=='0'?'Pending':i.policy_status=='2'?'Rejected':'' }}
-                            <button class="btn btn-info" *ngIf="i.is_Accepted=='1'"
+                            <button class="btn btn-info" *ngIf="i.policy_status==1"
                                 (click)="downloadPolicies(i.vehicle_ID)">
                                 Download Policy
-                            </button>
-                        </td>
-                        <td>
-                            <button class="btn btn-info" (click)="updateVehicle()">
-                                Edit
                             </button>
                         </td>
                     </tr>

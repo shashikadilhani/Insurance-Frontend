@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h4 class="modal-title">Select Quotation To Accept</h4>
+</div>
+<div class="modal-body">
+    <form [formGroup]="quotationForm">
+        <div class="form-group">
+            <label>Select Quotation by Name</label>
+            <select class="form-control" formControlName="quotation" aria-placeholder="Select">
+                <option *ngFor="let quotation of quotations" [value]="quotation.Quotation_ID">{{quotation.name}}
+                </option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="onSubmit(quotationForm.value)">Accept</button>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

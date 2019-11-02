@@ -16,7 +16,9 @@ export class BrokerPortalComponent implements OnInit {
     { name: "Quotation Request History", key: "request-history"},
     { name: "Customer History", key: "customer-history"},
     { name: "Building Claim Requests", key: "building-claims"},
-    { name: "Vehicle Claim Requests", key: "vehicle-claims"}
+    { name: "Vehicle Claim Requests", key: "vehicle-claims"},
+    { name: "Policies", key: "policies"},
+    { name: "Quotations", key: "quotations"}
   ];
   constructor(private route: ActivatedRoute) {
     route.queryParamMap.subscribe(params => {

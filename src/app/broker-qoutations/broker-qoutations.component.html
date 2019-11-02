@@ -1,0 +1,54 @@
+<div class="card ">
+        <div class="form-group">
+            <div class="card-header">
+                Upload New Quotation
+            </div>
+            <form [formGroup]="uploadForm" (ngSubmit)="onSubmit(uploadForm.value)">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label style="margin: 5px;">Quotation Name</label>
+                        <input type="text" class="form-control" formControlName="quotationName" placeholder="Enter Name">
+                    </div>
+                </div>
+                <input type="file" style="margin: 5px;margin-right: 20px;" class="form-control" id="file1"
+                    (change)="handleFileInput($event.target.files)" />
+                <button type="submit" class="btn btn-primary" style="margin: 5px;">
+                    Upload
+                </button>
+            </form>
+        </div>
+        <div class="card-header">
+            Uploaded Quotations
+        </div>
+    
+        <div class="card-body">
+            <div class="text-right">
+                <table class="table">
+                    <thead class="">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Quotation Name</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of listItems">
+                            <th scope="row">{{ i.Quotation_ID }}</th>
+                            <td>{{ i.name }}</td>
+                            <td>
+                                <a class="btn btn-danger" style="color: white;" href="http://localhost:3001/api/brokers/downloadDocument?filePath={{i.location}}">
+                                    Download
+                                </a>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" (click)="delete(i)">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
