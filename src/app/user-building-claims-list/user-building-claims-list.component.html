@@ -15,6 +15,7 @@
                         <th scope="col">Date</th>
                         <th scope="col">Time</th>
                         <th scope="col">Casualties</th>
+                        <th scope="col">Broker Id</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
@@ -22,10 +23,11 @@
                 <tbody>
                     <tr *ngFor="let i of claimItems">
                         <th scope="row">{{ i.id }}</th>
-                        <td>{{ i.building_id }}</td>
+                        <td>{{ i.buildingId }}</td>
                         <td>{{ i.date }}</td>
                         <td>{{ i.time }}</td>
                         <td>{{ i.casualties }}</td>
+                        <td>{{ i.brokerid }}</td>
                         <td>
                             <button class="btn btn-warning" (click)="viewClaim(i)">
                                 View Claim

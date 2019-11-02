@@ -1,0 +1,37 @@
+<div class="card ">
+        <div class="card-header">
+            Building Claim Requests
+        </div>
+        <div class="card-body">
+            <div>
+                <table class="table">
+                    <thead class="">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Building Id</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Casualties</th>
+                            <th scope="col">User Id</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of claimItems">
+                            <th scope="row">{{ i.id }}</th>
+                            <td>{{ i.buildingId }}</td>
+                            <td>{{ i.date }}</td>
+                            <td>{{ i.time }}</td>
+                            <td>{{ i.casualties }}</td>
+                            <td>{{ i.userId }}</td>
+                            <td>
+                                <button class="btn btn-warning" (click)="viewClaim(i)">
+                                    View Claim
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

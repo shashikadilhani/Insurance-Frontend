@@ -4,6 +4,7 @@ import { AuthService } from '../auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PopUpViewClaimComponent } from './pop-up-view-claim/pop-up-view-claim.component';
+import { PopUpNewClaimComponent } from './pop-up-new-claim/pop-up-new-claim.component';
 
 @Component({
   selector: 'app-user-claims-list',
@@ -11,40 +12,50 @@ import { PopUpViewClaimComponent } from './pop-up-view-claim/pop-up-view-claim.c
   styleUrls: ['./user-claims-list.component.css']
 })
 export class UserClaimsListComponent implements OnInit {
-  listItems;
-  endpoint = "brokers";
-  city;
+  claimItems: any;
 
   constructor(
-    private data: DataService,
-    private auth: AuthService,
+    private dataService: DataService,
+    private authService: AuthService,
     private modalService: NgbModal,
     private toastService: ToastrService
   ) { }
 
   ngOnInit() {
-    this.city = this.auth.currentUser.city;
     this.loadData();
   }
 
   loadData() {
-    this.data
-      .getBy(this.endpoint, "city", { city: this.city })
-      .subscribe(res => {
-        this.listItems = res["data"];
-      });
+    this.dataService.get('customers/vehicle', `claims?id=${this.authService.currentUser.id}`).subscribe(data => {
+      console.log(data);
+      this.claimItems = data['data'];
+    });
   }
 
-  request(id: string) {
-    const modalRef = this.modalService.open(PopUpViewClaimComponent);
-    modalRef.componentInstance.brokerId = id;
+  newClaim() {
+    const modalRef = this.modalService.open(PopUpNewClaimComponent);
     modalRef.result.then(data => {
       if (data === 'success') {
-        this.toastService.success("Request sent successfully.");
+        this.loadData();
+        this.toastService.success("Claim sent successfully.");
       } else if (data === 'error') {
-        this.toastService.error("Request failed.");
+        this.toastService.error("Unable to send the new claim.");
       }
     });
   }
+
+  viewClaim(claim) {
+    const modelRef = this.modalService.open(PopUpViewClaimComponent);
+    modelRef.componentInstance.requestData = claim;
+  }
+
+  deleteClaim(claimId: number) {
+    this.dataService.delete('customers/vehicle/delete-claim', claimId).subscribe(data => {
+      if (data['error'] === false) {
+        this.loadData();
+      }
+    });
+  }
+
 
 }

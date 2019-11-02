@@ -12,7 +12,9 @@ export class BrokerPortalComponent implements OnInit {
   menu = [
     { name: "Dashboard", key: "dashboard" },
     { name: "Brokers", key: "brokerlist" },
-    { name: "Pending Requests", key: "pending-requests" }
+    { name: "Pending Quotation Requests", key: "pending-requests" },
+    { name: "Building Claim Requests", key: "building-claims"},
+    { name: "Vehicle Claim Requests", key: "vehicle-claims"}
   ];
   constructor(private route: ActivatedRoute) {
     route.queryParamMap.subscribe(params => {

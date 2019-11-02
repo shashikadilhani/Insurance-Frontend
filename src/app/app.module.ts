@@ -39,6 +39,10 @@ import { PopUpNewClaimComponent } from './user-claims-list/pop-up-new-claim/pop-
 import { PopUpViewClaimComponent } from './user-claims-list/pop-up-view-claim/pop-up-view-claim.component';
 import { PopUpViewBuildingClaimComponent } from './user-building-claims-list/pop-up-view-building-claim/pop-up-view-building-claim.component';
 import { PopUpNewBuildingClaimComponent } from './user-building-claims-list/pop-up-new-building-claim/pop-up-new-building-claim.component';
+import { CustomerVehicleClaimsComponent } from './customer-vehicle-claims/customer-vehicle-claims.component';
+import { CustomerBuildingClaimsComponent } from './customer-building-claims/customer-building-claims.component';
+import { PopUpBuildingClaimsComponent } from './customer-building-claims/pop-up-building-claims/pop-up-building-claims.component';
+import { PopUpVehicleClaimsComponent } from './customer-building-claims/pop-up-vehicle-claims/pop-up-vehicle-claims.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +78,11 @@ import { PopUpNewBuildingClaimComponent } from './user-building-claims-list/pop-
     PopUpNewClaimComponent,
     PopUpViewClaimComponent,
     PopUpViewBuildingClaimComponent,
-    PopUpNewBuildingClaimComponent
+    PopUpNewBuildingClaimComponent,
+    CustomerVehicleClaimsComponent,
+    CustomerBuildingClaimsComponent,
+    PopUpBuildingClaimsComponent,
+    PopUpVehicleClaimsComponent
   ],
   imports: [
     BrowserModule,
@@ -100,7 +108,9 @@ import { PopUpNewBuildingClaimComponent } from './user-building-claims-list/pop-
     PopUpNewClaimComponent,
     PopUpViewClaimComponent,
     PopUpViewBuildingClaimComponent,
-    PopUpNewBuildingClaimComponent
+    PopUpNewBuildingClaimComponent,
+    PopUpBuildingClaimsComponent,
+    PopUpVehicleClaimsComponent
   ]
 })
 export class AppModule {}

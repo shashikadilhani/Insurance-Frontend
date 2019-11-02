@@ -5,7 +5,7 @@
     <form [formGroup]="buildingForm" (ngSubmit)="onSubmit(buildingForm.value)">
         <div class="form-group">
             <label>Select Building by Id</label>
-            <select class="form-control" aria-placeholder="Select">
+            <select class="form-control" formControlName="building_id" aria-placeholder="Select">
                 <option *ngFor="let building of buildings" [value]="building.id">{{building.id}}
                 </option>
             </select>
@@ -23,23 +23,27 @@
             <input type="text" class="form-control" formControlName="casualties"
                 placeholder="Enter amount of Casualties">
         </div>
+        <div class="form-group">
+            <label>Select Broker by Id</label>
+            <select class="form-control" formControlName="brokerId" aria-placeholder="Select">
+                <option *ngFor="let broker of brokers" [value]="broker.user_id">{{broker.user_id}}
+                </option>
+            </select>
+        </div>
 
         <div class="form-group">
             Photo #1
-            <input type="file" class="form-control" ng2FileSelect
-            id="file1" (change)="handleFileInput1($event.target.files)" />
+            <input type="file" class="form-control" id="file1" (change)="handleFileInput1($event.target.files)" />
             <br />
         </div>
         <div class="form-group">
             Photo #2
-            <input type="file" class="form-control" ng2FileSelect
-            id="file2" (change)="handleFileInput2($event.target.files)" />
+            <input type="file" class="form-control" id="file2" (change)="handleFileInput2($event.target.files)" />
             <br />
         </div>
         <div class="form-group">
             Photo #3
-            <input type="file" class="form-control" ng2FileSelect
-            id="file3" (change)="handleFileInput3($event.target.files)" />
+            <input type="file" class="form-control" id="file3" (change)="handleFileInput3($event.target.files)" />
             <br />
         </div>
 

@@ -1,15 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/auth.service';
-import { ToastrService } from 'ngx-toastr';
 import { DataService } from 'src/app/data.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-pop-up-view-building-claim',
-  templateUrl: './pop-up-view-building-claim.component.html',
-  styleUrls: ['./pop-up-view-building-claim.component.css']
+  selector: 'app-pop-up-building-claims',
+  templateUrl: './pop-up-building-claims.component.html',
+  styleUrls: ['./pop-up-building-claims.component.css']
 })
-export class PopUpViewBuildingClaimComponent implements OnInit {
+export class PopUpBuildingClaimsComponent implements OnInit {
+  
   @Input() requestData;
   propertyData;
   type: number;
@@ -24,10 +25,10 @@ export class PopUpViewBuildingClaimComponent implements OnInit {
 
   ngOnInit() {
     const building_id = this.requestData.buildingId;
-    this.dataService.getOne('customers', 'building/getOne', building_id).subscribe(result => {
+    this.dataService.getOne('brokers', 'building/getOne', building_id).subscribe(result => {
       this.propertyData = result['data'][0];
       console.log(this.requestData)
-      this.dataService.get('customers', `building/getDownloadLinks/?id=${this.requestData.id}`).subscribe(data => {
+      this.dataService.get('brokers', `building/getDownloadLinks/?id=${this.requestData.id}`).subscribe(data => {
         if (data['error']) {
           this.toastrService.error('Unable to load images');
         } else {

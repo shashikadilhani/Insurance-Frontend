@@ -1,36 +1,48 @@
 <div class="card ">
-        <div class="card-header">Brokers In {{ city }}</div>
-        <div class="card-body">
-          <div>
+    <div class="card-header">
+        My Vehicle Claims
+        <button class="btn btn-success float-right" (click)="newClaim()">
+            Add New
+        </button>
+    </div>
+    <div class="card-body">
+        <div>
             <table class="table">
-              <thead class="">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Full name</th>
-                  <th scope="col">Address</th>
-                  <th scope="col">Phn no</th>
-                  <th scope="col">City</th>
-                  <th scope="col">E-mail</th>
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let i of listItems">
-                  <th scope="row">{{ i.user_id }}</th>
-                  <td>{{ i.fullname }}</td>
-                  <td>{{ i.address }}</td>
-                  <td>{{ i.phone_num }}</td>
-                  <td>{{ i.city }}</td>
-                  <td>{{ i.email }}</td>
-                  <td>
-                    <button class="btn btn-warning" (click)="request(i.user_id)">
-                      Request Quotation
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
+                <thead class="">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Vehicle Id</th>
+                        <th scope="col">Accident Date</th>
+                        <th scope="col">Accident Time</th>
+                        <th scope="col">Casualties</th>
+                        <th scope="col">Venue</th>
+                        <th scope="col">Broker Id</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of claimItems">
+                        <th scope="row">{{ i.id }}</th>
+                        <td>{{ i.vehicle_id }}</td>
+                        <td>{{ i.accident_date }}</td>
+                        <td>{{ i.accident_time }}</td>
+                        <td>{{ i.casualties }}</td>
+                        <td>{{ i.venue }}</td>
+                        <td>{{ i.brokerid }}</td>
+                        <td>
+                            <button class="btn btn-warning" (click)="viewClaim(i)">
+                                View Claim
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-warning" (click)="deleteClaim(i.id)">
+                                Delete Claim
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
-          </div>
         </div>
-      </div>
-      
+    </div>
+</div>

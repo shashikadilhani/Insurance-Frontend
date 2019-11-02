@@ -2,13 +2,9 @@
   <div class="row">
     <div class="col-2">
       <div class="list-group">
-        <a
-          *ngFor="let menuitem of menu"
-          class="list-group-item list-group-item-action"
-          [class.active]="category === menuitem.key"
-          routerLink="/broker/portal"
-          [queryParams]="{ category: menuitem.key }"
-        >
+        <a *ngFor="let menuitem of menu" class="list-group-item list-group-item-action"
+          [class.active]="category === menuitem.key" routerLink="/broker/portal"
+          [queryParams]="{ category: menuitem.key }">
           <h6>{{ menuitem.name }}</h6>
         </a>
       </div>
@@ -30,6 +26,12 @@
       </div>
       <div *ngIf="category === 'pending-requests'" class="card">
         <app-customer-quotation-requests></app-customer-quotation-requests>
+      </div>
+      <div *ngIf="category === 'building-claims'" class="card">
+        <app-customer-building-claims></app-customer-building-claims>
+      </div>
+      <div *ngIf="category === 'vehicle-claims'" class="card">
+        <app-customer-vehicle-claims></app-customer-vehicle-claims>
       </div>
     </div>
   </div>
