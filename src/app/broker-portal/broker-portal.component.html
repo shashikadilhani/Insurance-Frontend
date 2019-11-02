@@ -20,13 +20,19 @@
           </div>
         </div>
       </div>
-
+      
       <div *ngIf="category === 'brokerlist'" class="card">
         <app-brokers-list></app-brokers-list>
       </div>
       <div *ngIf="category === 'pending-requests'" class="card">
         <app-customer-quotation-requests></app-customer-quotation-requests>
       </div>
+      <div *ngIf="category === 'request-history'" class="card">
+        <app-broker-quotation-request-history></app-broker-quotation-request-history>
+      </div>
+      <div *ngIf="category === 'customer-history'" class="card">
+          <app-customer-history></app-customer-history>
+        </div>
       <div *ngIf="category === 'building-claims'" class="card">
         <app-customer-building-claims></app-customer-building-claims>
       </div>

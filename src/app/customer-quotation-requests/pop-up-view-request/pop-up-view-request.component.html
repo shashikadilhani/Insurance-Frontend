@@ -103,7 +103,9 @@
         </div>
     </div>
     &nbsp;
-    <button class="btn btn-primary" (click)="calculateQuotation()">Calculate Quotation</button>
+    <button class="btn btn-primary" (click)="acceptQuotation(requestData.Request_ID)">Accept And Send Quotations</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="btn btn-danger" (click)="rejectQuotation(requestData.Request_ID)">Reject</button>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>

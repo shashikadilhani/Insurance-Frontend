@@ -5,11 +5,11 @@ import { DataService } from 'src/app/data.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-pop-up-view-request',
-  templateUrl: './pop-up-view-request.component.html',
-  styleUrls: ['./pop-up-view-request.component.css']
+  selector: 'app-pop-up-view-request-detail',
+  templateUrl: './pop-up-view-request-detail.component.html',
+  styleUrls: ['./pop-up-view-request-detail.component.css']
 })
-export class PopUpViewRequestComponent implements OnInit {
+export class PopUpViewRequestDetailComponent implements OnInit {
 
   @Input() requestData;
   propertyData;
@@ -44,24 +44,13 @@ export class PopUpViewRequestComponent implements OnInit {
     }
   }
 
-  acceptQuotation(requestId) {
-    this.dataService.getOne('brokers', 'acceptQuotation', requestId).subscribe(result => {
+  sendPolicy(requestId) {
+    this.dataService.getOne('brokers', 'sendPolicy', requestId).subscribe(result => {
       if (!result['error']) {
         this.loadData();
         this.modalService.close('success');
       } else {
-        this.toastrService.error('Request Accept Failed');
-      }
-    });
-  }
-
-  rejectQuotation(requestId) {
-    this.dataService.getOne('brokers', 'rejectQuotation', requestId).subscribe(result => {
-      if (!result['error']) {
-        this.loadData();
-        this.modalService.close('success');
-      } else {
-        this.toastrService.error('Request Reject Failed');
+        this.toastrService.error('Policy Send Failed');
       }
     });
   }

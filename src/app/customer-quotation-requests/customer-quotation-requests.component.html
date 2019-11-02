@@ -15,6 +15,7 @@
               <th scope="col">E-mail</th>
               <th scope="col">NIC</th>
               <th scope="col">Type</th>
+              <th scope="col">Status</th>
               <th scope="col"></th>
             </tr>
           </thead>
@@ -28,6 +29,7 @@
               <td>{{ i.email }}</td>
               <td>{{ i.nic }}</td>
               <td>{{ i.vehicle_id!=null?'Vehicle':'Building' }}</td>
+              <td>{{ i.is_Accepted=='0'?'Pending':i.is_Accepted=='2'?'Rejected':'Invalid' }}</td>
               <td>
                 <button class="btn btn-danger" (click)="viewDetails(i)">
                   View Details

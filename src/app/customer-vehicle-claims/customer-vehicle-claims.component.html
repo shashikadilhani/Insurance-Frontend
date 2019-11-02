@@ -1,1 +1,39 @@
-<p>customer-vehicle-claims works!</p>
+<div class="card ">
+        <div class="card-header">
+            Vehicle Claims
+        </div>
+        <div class="card-body">
+            <div>
+                <table class="table">
+                    <thead class="">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Vehicle Id</th>
+                            <th scope="col">Accident Date</th>
+                            <th scope="col">Accident Time</th>
+                            <th scope="col">Casualties</th>
+                            <th scope="col">Venue</th>
+                            <th scope="col">User Id</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of claimItems">
+                            <th scope="row">{{ i.id }}</th>
+                            <td>{{ i.vehicle_id }}</td>
+                            <td>{{ i.accident_date }}</td>
+                            <td>{{ i.accident_time }}</td>
+                            <td>{{ i.casualties }}</td>
+                            <td>{{ i.venue }}</td>
+                            <td>{{ i.userId }}</td>
+                            <td>
+                                <button class="btn btn-warning" (click)="viewClaim(i)">
+                                    View Claim
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

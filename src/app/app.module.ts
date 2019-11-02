@@ -42,7 +42,10 @@ import { PopUpNewBuildingClaimComponent } from './user-building-claims-list/pop-
 import { CustomerVehicleClaimsComponent } from './customer-vehicle-claims/customer-vehicle-claims.component';
 import { CustomerBuildingClaimsComponent } from './customer-building-claims/customer-building-claims.component';
 import { PopUpBuildingClaimsComponent } from './customer-building-claims/pop-up-building-claims/pop-up-building-claims.component';
-import { PopUpVehicleClaimsComponent } from './customer-building-claims/pop-up-vehicle-claims/pop-up-vehicle-claims.component';
+import { PopUpVehicleClaimsComponent } from './customer-vehicle-claims/pop-up-vehicle-claims/pop-up-vehicle-claims.component';
+import { BrokerQuotationRequestHistoryComponent } from './broker-quotation-request-history/broker-quotation-request-history.component';
+import { PopUpViewRequestDetailComponent } from './broker-quotation-request-history/pop-up-view-request-detail/pop-up-view-request-detail.component';
+import { CustomerHistoryComponent } from './customer-history/customer-history.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +85,10 @@ import { PopUpVehicleClaimsComponent } from './customer-building-claims/pop-up-v
     CustomerVehicleClaimsComponent,
     CustomerBuildingClaimsComponent,
     PopUpBuildingClaimsComponent,
-    PopUpVehicleClaimsComponent
+    PopUpVehicleClaimsComponent,
+    BrokerQuotationRequestHistoryComponent,
+    PopUpViewRequestDetailComponent,
+    CustomerHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -110,7 +116,8 @@ import { PopUpVehicleClaimsComponent } from './customer-building-claims/pop-up-v
     PopUpViewBuildingClaimComponent,
     PopUpNewBuildingClaimComponent,
     PopUpBuildingClaimsComponent,
-    PopUpVehicleClaimsComponent
+    PopUpVehicleClaimsComponent,
+    PopUpViewRequestDetailComponent
   ]
 })
 export class AppModule {}

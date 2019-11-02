@@ -1,1 +1,60 @@
-<p>pop-up-new-claim works!</p>
+<div class="modal-header">
+    <h4 class="modal-title">Add New Vehicle Claim</h4>
+</div>
+<div class="modal-body">
+    <form [formGroup]="vehicleForm" (ngSubmit)="onSubmit(vehicleForm.value)">
+        <div class="form-group">
+            <label>Select Vehicle by Id</label>
+            <select class="form-control" formControlName="vehicle_id" aria-placeholder="Select">
+                <option *ngFor="let vehicle of vehicles" [value]="vehicle.vehicle_ID">{{vehicle.vehicle_ID}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Accident Date</label>
+            <input type="text" class="form-control" formControlName="date" placeholder="Enter Date">
+        </div>
+        <div class="form-group">
+            <label>Accident Time</label>
+            <input type="text" class="form-control" formControlName="time" placeholder="Enter Time">
+        </div>
+        <div class="form-group">
+            <label>Casualties</label>
+            <input type="text" class="form-control" formControlName="casualties"
+                placeholder="Enter amount of Casualties">
+        </div>
+        <div class="form-group">
+            <label>Venue</label>
+            <input type="text" class="form-control" formControlName="venue"
+                placeholder="Enter the venue">
+        </div>
+        <div class="form-group">
+            <label>Select Broker by Id</label>
+            <select class="form-control" formControlName="brokerId" aria-placeholder="Select">
+                <option *ngFor="let broker of brokers" [value]="broker.user_id">{{broker.user_id}}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            Photo #1
+            <input type="file" class="form-control" id="file1" (change)="handleFileInput1($event.target.files)" />
+            <br />
+        </div>
+        <div class="form-group">
+            Photo #2
+            <input type="file" class="form-control" id="file2" (change)="handleFileInput2($event.target.files)" />
+            <br />
+        </div>
+        <div class="form-group">
+            Photo #3
+            <input type="file" class="form-control" id="file3" (change)="handleFileInput3($event.target.files)" />
+            <br />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

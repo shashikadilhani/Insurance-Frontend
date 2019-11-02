@@ -12,7 +12,7 @@ export class UserPortalComponent implements OnInit {
   menu = [
     { name: "Dashboard", key: "dashboard" },
     { name: "Available Brokers", key: "brokerlist" },
-    { name: "My Broker Requests", key: "broker-requests" },
+    { name: "View Quotations", key: "broker-requests" },
     { name: "My Vehicle Claims", key: "claims" },
     { name: "My Building Claims", key: "building-claims" },
     { name: "My Vehicles", key: "vehicles" },

@@ -10,6 +10,13 @@ export class BrokerQuotationReponsesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.loadData();
   }
+
+  loadData() {}
+
+  downloadQuotations() {}
+
+  downloadPolicies() {}
 
 }

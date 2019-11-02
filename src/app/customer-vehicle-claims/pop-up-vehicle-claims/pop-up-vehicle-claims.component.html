@@ -1,0 +1,93 @@
+<div class="modal-header">
+        <h4 class="modal-title">Claim Details</h4>
+    </div>
+    <div class="modal-body container" *ngIf="propertyData">
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>Claim Id</strong></label>
+                <label>&nbsp;{{requestData.id}}</label>
+            </div>
+            <div class="col-sm">
+                <label><strong></strong></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>Vehicle Id</strong></label>
+                <label>&nbsp;{{requestData.vehicle_id}}</label>
+            </div>
+            <div class="col-sm">
+                <label><strong>Model</strong></label>
+                <label>&nbsp;{{propertyData.Model}}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>Accident Date</strong></label>
+                <label>&nbsp;{{requestData.accident_date}}</label>
+            </div>
+            <div class="col-sm">
+                <label><strong>Type</strong></label>
+                <label>&nbsp;{{propertyData.type}}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+    
+            <div class="col-sm">
+                <label><strong>Accident Time</strong></label>
+                <label>&nbsp;{{requestData.accident_time}}</label>
+            </div>
+            <div class="col-sm">
+                <label><strong>Number</strong></label>
+                <label>&nbsp;{{propertyData.number}}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>Casualties</strong></label>
+                <label>&nbsp;{{requestData.casualties}}</label>
+            </div>
+            <div class="col-sm">
+                <label><strong>Manf Year</strong></label>
+                <label>&nbsp;{{propertyData.Mauf_Year}}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>User id</strong></label>
+                <label>&nbsp;{{requestData.userId}}</label>
+            </div>
+            <div class="col-sm">
+                <label><strong>Market Value</strong></label>
+                <label>&nbsp;{{propertyData.Market_Value}}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>Venue</strong></label>
+                <label>&nbsp;{{requestData.venue}}</label>
+            </div>
+            <div class="col-sm">
+                <label><strong>Vehicle Usage</strong></label>
+                <label>&nbsp;{{propertyData.v_usage}}</label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong></strong></label>
+                <label></label>
+            </div>
+            <div class="col-sm">
+                <label><strong>Fuel Type</strong></label>
+                <label>&nbsp;{{propertyData.fugi_type}}</label>
+            </div>
+        </div>
+        &nbsp;
+        <hr>
+        <div *ngFor="let image of images">
+            <img src="{{image}}" width="200px" style="padding: 10px; display: block; margin: auto;" height="200px" alt="">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+    </div>
