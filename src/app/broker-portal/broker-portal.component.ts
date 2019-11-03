@@ -11,7 +11,6 @@ export class BrokerPortalComponent implements OnInit {
 
   menu = [
     { name: "Dashboard", key: "dashboard" },
-    { name: "Brokers", key: "brokerlist" },
     { name: "Pending Quotation Requests", key: "pending-requests" },
     { name: "Quotation Request History", key: "request-history"},
     { name: "Customer History", key: "customer-history"},

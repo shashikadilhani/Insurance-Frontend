@@ -19,7 +19,6 @@ import { BrokersListComponent } from "./brokers-list/brokers-list.component";
 import { BrokerPendingRequestsComponent } from "./broker-pending-requests/broker-pending-requests.component";
 import { UserBrokersListComponent } from './user-brokers-list/user-brokers-list.component';
 import { UserClaimsListComponent } from './user-claims-list/user-claims-list.component';
-import { UserNewClaimComponent } from './user-new-claim/user-new-claim.component';
 import { FileSelectDirective } from 'ng2-file-upload';
 import { UserVehiclesComponent } from './user-vehicles/user-vehicles.component';
 import { NewVehicleComponent } from './user-vehicles/pop-up/new-vehicle/new-vehicle.component';
@@ -71,7 +70,6 @@ import { PopUpPremiumDetailsComponent } from './user-premium-history/pop-up-prem
     BrokerPendingRequestsComponent,
     UserBrokersListComponent,
     UserClaimsListComponent,
-    UserNewClaimComponent,
     FileSelectDirective,
     UserVehiclesComponent,
     NewVehicleComponent,
