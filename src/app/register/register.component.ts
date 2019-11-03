@@ -3,6 +3,7 @@ import { FormControl } from "@angular/forms";
 import { VirtualTimeScheduler } from "rxjs";
 import { DataService } from "../data.service";
 import { Router } from "@angular/router";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: "app-register",
@@ -11,7 +12,7 @@ import { Router } from "@angular/router";
 })
 export class RegisterComponent implements OnInit {
   role: any;
-  constructor(private data: DataService, private router: Router) {}
+  constructor(private data: DataService, private router: Router, private toastService: ToastrService) { }
   loading = false;
   error = true;
   messege;
@@ -25,10 +26,10 @@ export class RegisterComponent implements OnInit {
   city: any;
   type: any;
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   onSubmit() {
-    let registerDetails = {
+    const registerDetails = {
       fullname: this.fname + " " + this.lname,
       address: this.address,
       nic: this.nicno,
@@ -41,16 +42,26 @@ export class RegisterComponent implements OnInit {
     };
 
     console.log(registerDetails);
-
-    this.data.register(registerDetails).subscribe(res => {
-      if (res["error"]) {
-        this.loading = false;
-        this.error = true;
-      } else {
-        this.loading = false;
-        this.router.navigate(["login"]);
-      }
-    });
+    if (!registerDetails.fullname || !registerDetails.address
+      || !registerDetails.nic || !registerDetails.password || !registerDetails.email || !registerDetails.city) {
+      this.toastService.error('Invalid Form Data');
+    } else {
+      this.data.get('register', `checkEmailForSignUp?email=${registerDetails.email}`).subscribe(result => {
+        if (result['error']) {
+          this.toastService.error('This User Already Exists');
+        } else {
+          this.data.register(registerDetails).subscribe(res => {
+            if (res["error"]) {
+              this.loading = false;
+              this.error = true;
+            } else {
+              this.loading = false;
+              this.router.navigate(["login"]);
+            }
+          });
+        }
+      });
+    }
 
     this.fname = "";
     this.lname = "";
