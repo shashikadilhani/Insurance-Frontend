@@ -49,6 +49,10 @@ import { BrokerPoliciesComponent } from './broker-policies/broker-policies.compo
 import { BrokerQoutationsComponent } from './broker-qoutations/broker-qoutations.component';
 import { PopUpDownloadQuotationComponent } from './broker-quotation-reponses/pop-up-download-quotation/pop-up-download-quotation.component';
 import { PopUpAcceptQuotationComponent } from './broker-quotation-reponses/pop-up-accept-quotation/pop-up-accept-quotation.component';
+import { PopUpDownloadPolicyComponent } from './broker-quotation-reponses/pop-up-download-policy/pop-up-download-policy.component';
+import { PopUpHistoryDetailsComponent } from './customer-history/pop-up-history-details/pop-up-history-details.component';
+import { UserPremiumHistoryComponent } from './user-premium-history/user-premium-history.component';
+import { PopUpPremiumDetailsComponent } from './user-premium-history/pop-up-premium-details/pop-up-premium-details.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +98,11 @@ import { PopUpAcceptQuotationComponent } from './broker-quotation-reponses/pop-u
     BrokerPoliciesComponent,
     BrokerQoutationsComponent,
     PopUpDownloadQuotationComponent,
-    PopUpAcceptQuotationComponent
+    PopUpAcceptQuotationComponent,
+    PopUpDownloadPolicyComponent,
+    PopUpHistoryDetailsComponent,
+    UserPremiumHistoryComponent,
+    PopUpPremiumDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -124,7 +132,9 @@ import { PopUpAcceptQuotationComponent } from './broker-quotation-reponses/pop-u
     PopUpVehicleClaimsComponent,
     PopUpViewRequestDetailComponent,
     PopUpDownloadQuotationComponent,
-    PopUpAcceptQuotationComponent
+    PopUpAcceptQuotationComponent,
+    PopUpDownloadPolicyComponent,
+    PopUpHistoryDetailsComponent
   ]
 })
 export class AppModule {}

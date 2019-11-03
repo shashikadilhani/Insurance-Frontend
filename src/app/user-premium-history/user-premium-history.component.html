@@ -1,0 +1,37 @@
+<div class="card ">
+    <div class="card-header">
+        My Premium History
+    </div>
+    <div class="card-body">
+        <div class="text-right">
+            <table class="table">
+                <thead class="">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Broker Id</th>
+                        <th scope="col">Property Type</th>
+                        <th scope="col">Property Id</th>
+                        <th scope="col">Quotation Id</th>
+                        <th scope="col">Policy Id</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of listItems">
+                        <th scope="row">{{ i.Request_ID }}</th>
+                        <td>{{ i.broker_id }}</td>
+                        <td>{{ i.vehicle_id?'Vehicle':'Building' }}</td>
+                        <td>{{ i.vehicle_id }}{{ i.building_id }}</td>
+                        <td>{{ i.quotation_id }}</td>
+                        <td>{{ i.policy_id }}</td>
+                        <td>
+                            <button class="btn btn-info" (click)="viewDetails(i)">
+                                View Details
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

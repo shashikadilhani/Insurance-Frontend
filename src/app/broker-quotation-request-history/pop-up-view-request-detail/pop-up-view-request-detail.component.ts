@@ -3,6 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/auth.service';
 import { DataService } from 'src/app/data.service';
 import { ToastrService } from 'ngx-toastr';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pop-up-view-request-detail',
@@ -14,6 +15,14 @@ export class PopUpViewRequestDetailComponent implements OnInit {
   @Input() requestData;
   propertyData;
   type: number;
+
+  policy = new FormControl('', { validators: Validators.required });
+
+  policyForm: FormGroup = new FormGroup({
+    policy: this.policy
+  });
+
+  policies: any;
 
   constructor(
     private modalService: NgbActiveModal,
@@ -42,10 +51,16 @@ export class PopUpViewRequestDetailComponent implements OnInit {
         console.log(result)
       });
     }
+    this.dataService.get(`brokers`, `getAllPolicies`).subscribe(data => {
+      console.log(data)
+      this.policies = data['data'];
+    });
   }
 
-  sendPolicy(requestId) {
-    this.dataService.getOne('brokers', 'sendPolicy', requestId).subscribe(result => {
+  sendPolicy(requestId, policyId) {
+    console.log(requestId)
+    console.log(policyId)
+    this.dataService.getBy('brokers', 'sendPolicy', { requestId, policyId }).subscribe(result => {
       if (!result['error']) {
         this.loadData();
         this.modalService.close('success');

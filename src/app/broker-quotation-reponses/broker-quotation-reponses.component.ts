@@ -5,6 +5,7 @@ import { DataService } from '../data.service';
 import { ToastrService } from 'ngx-toastr';
 import { PopUpDownloadQuotationComponent } from './pop-up-download-quotation/pop-up-download-quotation.component';
 import { PopUpAcceptQuotationComponent } from './pop-up-accept-quotation/pop-up-accept-quotation.component';
+import { PopUpDownloadPolicyComponent } from './pop-up-download-policy/pop-up-download-policy.component';
 
 @Component({
   selector: 'app-broker-quotation-reponses',
@@ -14,6 +15,7 @@ import { PopUpAcceptQuotationComponent } from './pop-up-accept-quotation/pop-up-
 export class BrokerQuotationReponsesComponent implements OnInit {
 
   listItems: any;
+  policies: any;
 
   constructor(
     private modalService: NgbModal,
@@ -29,6 +31,9 @@ export class BrokerQuotationReponsesComponent implements OnInit {
     this.dataService.get('customers', `quotations/?id=${this.authService.currentUser.id}`).subscribe(result => {
       this.listItems = result['data'];
     });
+    this.dataService.get('customers', 'getAllPolicies').subscribe(result => {
+      this.policies = result['data'];
+    });
   }
 
   acceptQuotation(id) {
@@ -39,7 +44,7 @@ export class BrokerQuotationReponsesComponent implements OnInit {
         this.loadData();
         this.toastrService.success("Quotation Accepted");
       } else if (data === 'error') {
-        this.toastrService.error("Failed to Accpet Quotation");
+        this.toastrService.error("Failed to Accept Quotation");
       }
     });
   }
@@ -69,6 +74,9 @@ export class BrokerQuotationReponsesComponent implements OnInit {
     const modalRef = this.modalService.open(PopUpDownloadQuotationComponent);
   }
 
-  downloadPolicies() {}
+  downloadPolicy(policyId) {
+    const modalRef = this.modalService.open(PopUpDownloadPolicyComponent);
+    modalRef.componentInstance.policyId = policyId;
+  }
 
 }

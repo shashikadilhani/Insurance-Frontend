@@ -1,0 +1,9 @@
+<div class="modal-header">
+    <h4 class="modal-title">Do you want to download {{policyName}}</h4>
+</div>
+<div class="modal-body">
+    <a style="color: white;" *ngIf="documentPath" class="btn btn-primary" href="{{documentPath}}">Confirm</a>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

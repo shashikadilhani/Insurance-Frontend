@@ -10,6 +10,9 @@
         <div class="col-sm">
             <label><strong></strong></label>
         </div>
+        <div class="col-sm">
+            <label><strong></strong></label>
+        </div>
     </div>
     <div class="form-group row">
         <div class="col-sm">
@@ -23,6 +26,14 @@
         <div class="col-sm" *ngIf="type===0">
             <label><strong>Estimate Value</strong></label>
             <label>&nbsp;{{propertyData.estimate_Value}}</label>
+        </div>
+        <div class="col-sm">
+            <label *ngIf="!newPremiumRequset"><strong>Select Premium Id</strong></label>
+            <select *ngIf="!newPremiumRequset" class="form-control" (change)="changed($event.target.value)" aria-placeholder="Select">
+                <option *ngFor="let onePremiumData of premiumData" [value]="onePremiumData.Premum_ID">
+                    {{onePremiumData.Premum_ID}}
+                </option>
+            </select>
         </div>
     </div>
     <div class="form-group row">
@@ -38,9 +49,12 @@
             <label><strong>Address</strong></label>
             <label>&nbsp;{{propertyData.address}}</label>
         </div>
+        <div class="col-sm">
+            <label *ngIf="!newPremiumRequset"><strong>Payment Date</strong></label>
+            <label *ngIf="selectedPremiumData && !newPremiumRequset">&nbsp;{{selectedPremiumData.Payment_date}}</label>
+        </div>
     </div>
     <div class="form-group row">
-
         <div class="col-sm">
             <label><strong>Phn No</strong></label>
             <label>&nbsp;{{requestData.phone_num}}</label>
@@ -53,6 +67,13 @@
             <label><strong>Type</strong></label>
             <label>&nbsp;{{propertyData.type}}</label>
         </div>
+        <div class="col-sm">
+            <label><strong>Payment Amount</strong></label>
+            <label *ngIf="selectedPremiumData && !newPremiumRequset">&nbsp;{{selectedPremiumData.Payment_Amount}}</label>
+            <form [formGroup]="premiumForm" *ngIf="newPremiumRequset">
+                <input class="form-control" formControlName="premiumAmount"/>
+            </form>
+        </div>
     </div>
     <div class="form-group row">
         <div class="col-sm">
@@ -63,6 +84,11 @@
             <label><strong>Manf Year</strong></label>
             <label>&nbsp;{{propertyData.Mauf_Year}}</label>
         </div>
+        <div class="col-sm">
+            <label *ngIf="!newPremiumRequset"><strong>Payment</strong></label>
+            <label *ngIf="!newPremiumRequset && selectedPremiumData && selectedPremiumData.notification==0">&nbsp;Not Paid</label>
+            <label *ngIf="!newPremiumRequset && selectedPremiumData && selectedPremiumData.notification==1">&nbsp;Paid</label>
+        </div>
     </div>
     <div class="form-group row">
         <div class="col-sm">
@@ -72,6 +98,12 @@
         <div class="col-sm" *ngIf="type===1">
             <label><strong>Value</strong></label>
             <label>&nbsp;{{propertyData.Market_Value}}</label>
+        </div>
+        <div class="col-sm">
+            <button type="button" class="btn btn-primary" *ngIf="!newPremiumRequset" (click)="createNew()">Create New</button>
+            <button type="button" *ngIf="newPremiumRequset" class="btn btn-danger" (click)="cancel()">Cancel</button>
+            &nbsp;
+            <button type="button" *ngIf="newPremiumRequset" class="btn btn-primary" (click)="notify()">Notify</button>
         </div>
 
     </div>
@@ -84,35 +116,37 @@
             <label><strong>Fuel Type</strong></label>
             <label>&nbsp;{{propertyData.fugi_type}}</label>
         </div>
+        <div class="col-sm">
+            <label><strong></strong></label>
+        </div>
     </div>
     <div class="form-group row">
         <div class="col-sm">
-
+            <label><strong>Quotation Id</strong></label>
+            <label>&nbsp;{{requestData.quotation_id}}</label>
         </div>
         <div class="col-sm" *ngIf="type===1">
             <label><strong>V Usage</strong></label>
             <label>&nbsp;{{propertyData.v_usage}}</label>
         </div>
+        <div class="col-sm">
+            <label><strong></strong></label>
+        </div>
     </div>
     <div class="form-group row">
         <div class="col-sm">
+            <label><strong>Policy Id</strong></label>
+            <label>&nbsp;{{requestData.policy_id}}</label>
         </div>
         <div class="col-sm" *ngIf="type===1">
             <label><strong>Meta</strong></label>
             <label>&nbsp;{{propertyData.meta}}</label>
         </div>
+        <div class="col-sm">
+            <label><strong></strong></label>
+        </div>
     </div>
     &nbsp;
-    <form [formGroup]="policyForm" *ngIf="requestData.customer_acceptance==1">
-        <div class="form-group">
-            <label>Select Policy by Name</label>
-            <select class="form-control" formControlName="policy" aria-placeholder="Select">
-                <option *ngFor="let policy1 of policies" [value]="policy1.policy_id">{{policy1.name}}
-                </option>
-            </select>
-        </div>
-        <button type="button" class="btn btn-primary" (click)="sendPolicy(requestData.Request_ID ,policy.value)">Send Policies</button>
-    </form>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>

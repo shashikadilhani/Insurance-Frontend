@@ -24,7 +24,7 @@
                         <td>{{ i.vehicle_id?'Vehicle':'Building' }}</td>
                         <td>{{ i.vehicle_id }}{{ i.building_id }}</td>
                         <td>
-                            {{ i.is_Accepted==0?'Pending':i.is_Accepted==2?'Rejected':i.customer_acceptance==1?'Accepted':'' }}
+                            {{ i.is_Accepted==0?'Pending':i.is_Accepted==2?'Rejected':i.customer_acceptance==1?'Accepted':i.customer_acceptance==2?'Customer Rejected':'' }}
                             <button class="btn btn-info" *ngIf="i.is_Accepted=='1' && i.customer_acceptance=='0'"
                                 (click)="acceptQuotation(i.Request_ID)">
                                 Accept
@@ -54,7 +54,7 @@
                         </td>
                         <td>
                             <button class="btn btn-info" *ngIf="i.policy_status==1"
-                                (click)="downloadPolicies(i.vehicle_ID)">
+                                (click)="downloadPolicy(i.policy_id)">
                                 Download Policy
                             </button>
                         </td>

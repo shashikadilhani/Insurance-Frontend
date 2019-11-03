@@ -13,6 +13,7 @@ export class UserPortalComponent implements OnInit {
     { name: "Dashboard", key: "dashboard" },
     { name: "Available Brokers", key: "brokerlist" },
     { name: "View Quotations", key: "broker-requests" },
+    { name: "My Premium History", key: "premium-history" },
     { name: "My Vehicle Claims", key: "claims" },
     { name: "My Building Claims", key: "building-claims" },
     { name: "My Vehicles", key: "vehicles" },
