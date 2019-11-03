@@ -1,1 +1,76 @@
-<p>pop-up-premium-details works!</p>
+<div class="modal-header">
+    <h4 class="modal-title">Premium Detail</h4>
+</div>
+<div class="modal-body container" *ngIf="premiumData">
+    <form [formGroup]="paymentForm">
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>Request Id</strong></label>
+                <label>&nbsp;{{requestData.Request_ID}}</label>
+            </div>
+            <div class="col-sm">
+                <label><strong>Pay</strong></label>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>Select Premium Id</strong></label>
+                <select class="form-control" (change)="changed($event.target.value)" aria-placeholder="Select">
+                    <option *ngFor="let onePremiumData of premiumData" [value]="onePremiumData.Premum_ID">
+                        {{onePremiumData.Premum_ID}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-sm">
+                <label><strong>Select Premium Id</strong></label>
+                <select class="form-control" formControlName="premiumId"
+                    aria-placeholder="Select">
+                    <option *ngFor="let duePremiumdata of duePremiumdata" [value]="duePremiumdata.Premum_ID">
+                        {{duePremiumdata.Premum_ID}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>Payment Date</strong></label>
+                <label *ngIf="selectedPremiumData">&nbsp;{{selectedPremiumData.Payment_date}}</label>
+            </div>
+            <div class="col-sm">
+                <label><strong>Card Number</strong></label>
+                <input class="form-control" formControlName="cardNumber" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>Payment Amount</strong></label>
+                <label *ngIf="selectedPremiumData">&nbsp;{{selectedPremiumData.Payment_Amount}}</label>
+            </div>
+            <div class="col-sm">
+                <label><strong>Card Expire date</strong></label>
+                <input class="form-control" formControlName="cardExpireDate" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm">
+                <label><strong>Payment</strong></label>
+                <label *ngIf="selectedPremiumData && selectedPremiumData.notification==0">&nbsp;Not Paid</label>
+                <label *ngIf="selectedPremiumData && selectedPremiumData.notification==1">&nbsp;Paid</label>
+            </div>
+            <div class="col-sm">
+                <label><strong>Card Pin</strong></label>
+                <input class="form-control" formControlName="cardPin" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm"></div>
+            <div class="col-sm">
+                <button type="button" class="btn btn-primary" (click)="payPremium()">Pay Premium</button>
+            </div>
+        </div>
+        &nbsp;
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modalService.close('Close click')">Close</button>
+</div>

@@ -134,7 +134,8 @@ import { PopUpPremiumDetailsComponent } from './user-premium-history/pop-up-prem
     PopUpDownloadQuotationComponent,
     PopUpAcceptQuotationComponent,
     PopUpDownloadPolicyComponent,
-    PopUpHistoryDetailsComponent
+    PopUpHistoryDetailsComponent,
+    PopUpPremiumDetailsComponent
   ]
 })
 export class AppModule {}

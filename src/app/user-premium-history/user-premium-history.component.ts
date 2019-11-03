@@ -32,7 +32,7 @@ export class UserPremiumHistoryComponent implements OnInit {
   }
 
   viewDetails(requestData) {
-    const modalRefViewRequest = this.modalService.open(PopUpPremiumDetailsComponent);
+    const modalRefViewRequest = this.modalService.open(PopUpPremiumDetailsComponent, {size: 'lg'});
     modalRefViewRequest.componentInstance.requestData = requestData;
   }
 

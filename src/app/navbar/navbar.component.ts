@@ -17,6 +17,18 @@ export class NavbarComponent implements OnInit {
   }
 
   navigateToPortal() {
-    this.router.navigate(["portal"]);
+    if (this.auth.currentUser.type === "Admin") {
+      this.router.navigate(["/admin/portal"], {
+        queryParams: { category: "dashboard" }
+      });
+    } else if (this.auth.currentUser.type === "Customer") {
+      this.router.navigate(["/customer/portal"], {
+        queryParams: { category: "dashboard" }
+      });
+    } else if (this.auth.currentUser.type === "Broker") {
+      this.router.navigate(["/broker/portal"], {
+        queryParams: { category: "dashboard" }
+      });
+    }
   }
 }

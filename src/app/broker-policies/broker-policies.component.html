@@ -1,22 +1,4 @@
-<div class="card ">
-    <div class="form-group">
-        <div class="card-header">
-            Upload New Policy
-        </div>
-        <form [formGroup]="uploadForm" (ngSubmit)="onSubmit(uploadForm.value)">
-            <div class="form-group">
-                <div class="form-group">
-                    <label style="margin: 5px;">Policy Name</label>
-                    <input type="text" class="form-control" formControlName="policyName" placeholder="Enter Name">
-                </div>
-            </div>
-            <input type="file" style="margin: 5px;margin-right: 20px;" class="form-control" id="file1"
-                (change)="handleFileInput($event.target.files)" />
-            <button type="submit" class="btn btn-primary" style="margin: 5px;">
-                Upload
-            </button>
-        </form>
-    </div>
+<div class="card">
     <div class="card-header">
         Uploaded Policies
     </div>
@@ -37,7 +19,8 @@
                         <th scope="row">{{ i.policy_id }}</th>
                         <td>{{ i.name }}</td>
                         <td>
-                            <a class="btn btn-danger" style="color: white;" href="http://localhost:3001/api/brokers/downloadDocument?filePath={{i.location}}">
+                            <a class="btn btn-danger" style="color: white;"
+                                href="http://localhost:3001/api/brokers/downloadDocument?filePath={{i.location}}">
                                 Download
                             </a>
                         </td>
@@ -49,6 +32,31 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+</div>
+
+&nbsp;
+&nbsp;
+<div class="card ">
+    <div class="form-group">
+        <div class="card-header">
+            Upload New Policy
+        </div>
+        <div style="width: 30vw; margin: auto; display: block;">
+            <form [formGroup]="uploadForm" (ngSubmit)="onSubmit(uploadForm.value)">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label style="margin: 5px;">Policy Name</label>
+                        <input type="text" class="form-control" formControlName="policyName" placeholder="Enter Name">
+                    </div>
+                </div>
+                <input type="file" style="margin: 5px;margin-right: 20px;" class="form-control" id="file1"
+                    (change)="handleFileInput($event.target.files)" />
+                <button type="submit" class="btn btn-primary" style="margin: 5px;">
+                    Upload
+                </button>
+            </form>
         </div>
     </div>
 </div>
