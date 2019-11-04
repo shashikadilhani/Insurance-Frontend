@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DataService } from 'src/app/data.service';
 import { AuthService } from 'src/app/auth.service';
 
@@ -19,6 +19,7 @@ export class NewVehicleComponent implements OnInit {
   vehiUsage = new FormControl('', {});
   fuelType = new FormControl('', {});
   meta = new FormControl('', {});
+  insuranceType = new FormControl('', {});
 
   vehicleForm: FormGroup = new FormGroup({
     number: this.number,
@@ -28,8 +29,22 @@ export class NewVehicleComponent implements OnInit {
     marketVal: this.marketVal,
     vehiUsage: this.vehiUsage,
     fuelType: this.fuelType,
-    meta: this.meta
+    meta: this.meta,
+    insuranceType: this.insuranceType
   });
+
+  vehicles = [
+    {
+      type: 'Car',
+      make: ['a', 'b', 'c']
+    }, {
+      type: 'Three Wheel',
+      make: ['d', 'e', 'f']
+    }, {}, {}
+  ];
+  selectedVehicle: any;
+
+  insuranceTypes = ['a', 'b', 'c'];
 
   constructor(
     private modalService: NgbActiveModal,
@@ -42,11 +57,21 @@ export class NewVehicleComponent implements OnInit {
 
   onSubmit(value) {
     value.userId = this.authService.currentUser.id;
+    console.log(value)
     this.dataService.getBy('customers/vehicle', 'new', value).subscribe(data => {
       if (data['error'] === true) {
         this.modalService.close('error');
       } else {
         this.modalService.close('success');
+      }
+    });
+  }
+
+  changedType(value) {
+    this.vehicles.forEach(element => {
+      if (element.type === value) {
+        this.selectedVehicle = element;
+        return;
       }
     });
   }

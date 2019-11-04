@@ -17,20 +17,22 @@
               <th scope="col">Market Value</th>
               <th scope="col">V Usage</th>
               <th scope="col">Fuel Type</th>
-              <th scope="col">Meta</th>
+              <th scope="col">Ins Type</th>
+              <th scope="col">Make</th>
               <th scope="col"></th>
               <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let i of listItems">
-              <th scope="row">{{ i.number }}</th>
+              <th scope="row">{{ i.vehicle_ID }}</th>
               <td>{{ i.Model }}</td>
               <td>{{ i.type }}</td>
               <td>{{ i.Mauf_Year }}</td>
               <td>{{ i.Market_Value }}</td>
               <td>{{ i.v_usage }}</td>
               <td>{{ i.fugi_type }}</td>
+              <td>{{ i.insuranceType }}</td>
               <td>{{ i.meta }}</td>
               <td>
                 <button class="btn btn-danger" (click)="deleteVehicle(i.vehicle_ID)">
