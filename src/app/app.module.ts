@@ -52,6 +52,9 @@ import { PopUpDownloadPolicyComponent } from './broker-quotation-reponses/pop-up
 import { PopUpHistoryDetailsComponent } from './customer-history/pop-up-history-details/pop-up-history-details.component';
 import { UserPremiumHistoryComponent } from './user-premium-history/user-premium-history.component';
 import { PopUpPremiumDetailsComponent } from './user-premium-history/pop-up-premium-details/pop-up-premium-details.component';
+import { ServicesComponent } from './services/services.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +103,10 @@ import { PopUpPremiumDetailsComponent } from './user-premium-history/pop-up-prem
     PopUpDownloadPolicyComponent,
     PopUpHistoryDetailsComponent,
     UserPremiumHistoryComponent,
-    PopUpPremiumDetailsComponent
+    PopUpPremiumDetailsComponent,
+    ServicesComponent,
+    AboutusComponent,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,

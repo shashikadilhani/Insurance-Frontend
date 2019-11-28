@@ -1,0 +1,14 @@
+.modal-header{
+    background-color:
+    rgb(76, 247, 119);
+    color: rgb(8, 14, 10);
+ }
+ 
+ .btn-primary{
+     background-color: rgb(141, 230, 156);
+     color: rgb(21, 100, 47);
+ }
+ 
+ .btn-outline-dark{
+     background-color: rgb(141, 230, 156);
+ }

@@ -1,7 +1,97 @@
 #hero {
   width: 100%;
-  height: 100vh;
-  background-image: url("/assets/10.png");
+  height: 70vh;
+  background-image: url("G:\2nd year 1st sem\software project\FINAL PROJECT\insurance-backend\resources\insurtech-BBVA-1024x431.jpg");
   background-size: cover;
   position: relative;
+  text-align: center;
+  padding-top: 150px;
+  
+  color: rgb(19, 21, 22);
+  font-size: 100px;
+  
+ 
+
+  
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(55, 73, 90);
+  width: 100%;
+  height: 600px;
+  
+
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  text-align: left;
+  font-style: italic;
+  font-size: 20px;
+  padding: 50px;
+  width: 100%;
+  background-color:  rgb(55, 73, 90);;
+  height: 150px; /* only for demonstration, should be removed */
+  color: aliceblue;
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Style the footer */
+footer {
+  background-color: rgb(41, 37, 37);
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.btn-primary{
+  color: rgb(16, 93, 145);
+  font-weight: bolder;
+  background-color: rgb(183, 211, 240);
+  border-block-start-color: rgb(249, 249, 250)e;
+}
+
+.card-title{
+  color: rgb(235, 14, 187);
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+}
+
+
+
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
 }

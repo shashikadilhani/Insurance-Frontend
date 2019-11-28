@@ -1,0 +1,26 @@
+div{
+    background-color: rgb(206, 238, 185);
+    padding: 25px;
+    font-size: 30px;
+    font-style: italic;
+   
+    font-family: 'Dancing Script', cursive!important;
+}
+
+section{
+
+    background-color: rgb(174, 247, 165);
+    padding: 150px;
+    /* background-image: url("https://www.liveblogspot.com/wp-content/uploads/2018/06/Car-Insurance.jpg"); */
+ /* background-image: url("http://www.tryonics.com/wp-content/uploads/2018/11/Slider-1.jpg"); */
+background-image: url("G:\2nd year 1st sem\software project\FINAL PROJECT\insurance-frontend\src\assets\Slider-3.jpg");
+    font-size: 20px; 
+   
+}
+footer{
+    background-color: rgb(229, 245, 224);
+    padding: 150px;
+    font-size: 20px;
+    text-align: justify;
+    font-family: 'Dancing Script', cursive!important;
+}

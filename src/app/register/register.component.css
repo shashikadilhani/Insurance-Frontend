@@ -1,9 +1,33 @@
 div.pulldown {
   padding-top: 30px;
   max-width: 100%;
+  
 }
 div.c {
   margin: 0 auto; /* Added */
   float: none; /* Added */
   margin-bottom: 10px; /* Added */
 }
+div.card-body{
+  background-color: #c5f1d18c;
+  background-image:url('G:\2nd year 1st sem\software project\FINAL PROJECT\insurance-frontend\src\assets\bg01.jpg');
+  font-family: 'Dancing Script', cursive!important;
+}
+
+.body{
+  background-color: #9af3b08c;
+  background-image:url('G:\2nd year 1st sem\software project\FINAL PROJECT\insurance-frontend\src\assets\85654236-home-insurance-background.jpg');
+  font-family: 'Dancing Script', cursive!important;
+  color: antiquewhite;
+  
+}
+
+.card-header{
+  background-color: #0513088c;
+}
+
+.btn-primary{
+  background-color: rgb(17, 72, 97);
+}
+
+

@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(248, 220, 59);
+    padding: 200px;
+    font-size: 30px;
+     /* background-image:url("https://www.sovereigngroup.com/wp-content/uploads/2014/05/Insurance.jpg");
+     */
+     background-image: url("G:\2nd year 1st sem\software project\FINAL PROJECT\insurance-frontend\src\assets\career-slider.png");
+}
+
+section{
+    background-color: rgb(248, 193, 14)
+    ;
+    padding: 30px;
+    font-size: 20px;
+     font-family: 'Dancing Script', cursive!important;
+     font-weight: bold;
+
+
+    
+    
+}
+
+/* .a{
+    
+   
+    background-image:url("https://www.sovereigngroup.com/wp-content/uploads/2014/05/Insurance.jpg");
+    
+
+}
+ */
+
+ footer{
+     padding: 100px;
+     background-color: rgb(250, 252, 145);
+     text-align: justify;
+     font-size: 20px;
+     font-family: 'Dancing Script', cursive!important;
+ }

@@ -13,7 +13,9 @@ import { BrokerPortalComponent } from "./broker-portal/broker-portal.component";
 import { BrokerGuardService } from "./broker-guard.service";
 import { UnauthorizeComponent } from "./unauthorize/unauthorize.component";
 import { AdminUsersComponent } from "./admin-users/admin-users.component";
-
+import { ServicesComponent } from './services/services.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
@@ -45,7 +47,11 @@ const routes: Routes = [
   {
     path: "unauthorized-access",
     component: UnauthorizeComponent
-  }
+  },
+
+  { path: "services", component: ServicesComponent },
+  { path: "aboutus", component: AboutusComponent },
+  { path: "contactus", component: ContactusComponent }
 ];
 
 @NgModule({

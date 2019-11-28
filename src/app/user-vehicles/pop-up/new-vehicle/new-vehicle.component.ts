@@ -36,16 +36,25 @@ export class NewVehicleComponent implements OnInit {
   vehicles = [
     {
       type: 'Car',
-      make: ['a', 'b', 'c']
+      make: ['Toyota', 'BMW', 'Nissan','suzuki','mitsubishi','Honda', 'Maruti suzuki', 'Hyundai', 'KIA', 'Audi', 'Daihatsu', 'land rover', 'Volvo', 'micro']
     }, {
       type: 'Three Wheel',
-      make: ['d', 'e', 'f']
-    }, {}, {}
+      make: ['Bajaj 3w', 'Tvs 3W', 'piaggio','mahindra']
+    }, {
+      type: 'Motor cycle',
+      make: ['Honda 2W', 'Bajaj 2W', 'yamaha']}, {
+
+      type: 'Dual purpose',
+      make: ['Toyota', 'Nissan', 'Mahindra', 'Tata', 'Tafe','Foton']
+      }
   ];
   selectedVehicle: any;
+  
 
-  insuranceTypes = ['a', 'b', 'c'];
-
+  insuranceTypes = ['Full insurance', 'Third party'];
+  fuelTypes = ['petrol', 'Diesel','hybrid', 'electric'];
+  vehiUsages =['private', 'rent','hire'];
+  
   constructor(
     private modalService: NgbActiveModal,
     private authService: AuthService,

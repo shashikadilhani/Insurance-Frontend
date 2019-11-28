@@ -1,0 +1,29 @@
+.card-header{
+    color: rgb(15, 20, 20);
+    background-color: rgb(151, 189, 189);
+   
+}
+
+.btn-danger{
+    color: rgb(238, 247, 247);
+    background-color: rgb(20, 106, 121); 
+}
+
+.btn-info{
+    color: rgb(18, 110, 110);
+    background-color: rgb(236, 242, 243); 
+}
+
+.table{
+    color: rgb(10, 6, 12);
+    font-style: italic;;
+}
+.btn-success{
+
+    color: rgb(18, 110, 110);
+    background-color: rgb(236, 242, 243);
+}  
+.btn-warning{
+    /* background-color: rgb(20, 106, 121);  */
+    color: rgb(7, 67, 95);
+}

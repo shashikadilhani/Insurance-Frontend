@@ -1,10 +1,75 @@
 <nav
   class="navbar navbar-expand-lg navbar-dark"
-  style="background-color: #3f51b5;"
+  style="background-color: #1c7991;"
 >
-  <a class="navbar-brand" routerLink="/"
-    >Insurance Management System <small></small
-  ></a>
+
+<div id="container">
+  <nav>
+      <ul>
+        <li><a href="#">Home</a>
+          <!-- First Tier Drop Down -->
+                
+          </li>
+      </ul>
+  </nav>
+</div>
+<div id="container">
+  <nav>
+      <ul>
+          <li>
+          <!-- <a href="#">Services</a> -->
+          
+              <a routerLink = '/services' routerLinkActive = "active">services</a>
+          
+          
+
+         
+           
+            
+          <!-- First Tier Drop Down -->
+                
+          </li>
+      </ul>
+  </nav>
+</div>
+
+
+
+
+
+
+<div id="container">
+  <nav>
+      <ul>
+        <li>
+          <a routerLink = '/aboutus' routerLinkActive = "active">aboutus</a>
+         
+
+          
+          <!-- First Tier Drop Down -->
+              
+          </li>
+      </ul>
+  </nav>
+</div>
+
+
+
+
+
+<div id="container">
+  <nav>
+      <ul>
+          <li>
+          <!-- First Tier Drop Down -->
+          <a routerLink = '/contactus' routerLinkActive = "active">contactus</a>
+                 
+          </li>
+      </ul>
+  </nav>
+</div>
+
+ 
   <button
     class="navbar-toggler"
     type="button"
@@ -42,14 +107,16 @@
         </div>
       </a>
       <a
-        class="btn btn-success mr-2"
+        class="btn btn-primary"
         *ngIf="!auth.isLoggedIn()"
         routerLink="/register"
         >Sign up</a
       >
-      <a class="btn btn-warning" *ngIf="!auth.isLoggedIn()" routerLink="/login"
+      <a class="btn btn-light" *ngIf="!auth.isLoggedIn()" routerLink="/login"
         >Login</a
       >
     </form>
   </div>
-</nav>
+
+
+

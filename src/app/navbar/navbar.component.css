@@ -20,3 +20,36 @@
 .n {
   margin-right: 40px;
 }
+.btn-light {
+  color: rgb(16, 93, 145);
+  font-weight: bolder;
+  
+  border-block-start-color: rgb(239, 241, 243)e;
+}
+.btn-primary {
+  color: rgb(16, 93, 145);
+  font-weight: bolder;
+  background-color: rgb(183, 211, 240);
+  border-block-start-color: rgb(249, 249, 250)e;
+}
+.navbar-brand{
+font-weight: bold;
+  font-style: italic;
+  height: 60px;
+  font-size: 30px;
+}
+#container {
+  margin: 0 auto;
+  color: rgb(9, 10, 10);
+ 
+  
+  
+}
+
+nav ul li a{
+
+  color: rgb(239, 236, 241);
+  font-size: 20px;
+  
+}
+
